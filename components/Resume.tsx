@@ -1,0 +1,89 @@
+'use client';
+
+export default function Resume() {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Shreyas_Gupta_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <section id="resume" className="section-padding bg-[#0a0e27] border-t border-[#2a3050]">
+      <div className="container-custom">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+          Resume & <span className="text-cyan-400">CV</span>
+        </h2>
+        <div className="max-w-4xl mx-auto">
+          <div className="card-dark p-8 md:p-12 text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Download My Resume</h3>
+              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+                Get a comprehensive overview of my professional background, skills, and achievements.
+                Click the button below to download my resume in PDF format.
+              </p>
+            </div>
+
+            <button
+              onClick={handleDownload}
+              className="inline-flex items-center space-x-2 btn-primary mb-8"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              <span>Download Resume (PDF)</span>
+            </button>
+
+            <div className="mt-12 grid md:grid-cols-3 gap-6 text-left border-t border-[#2a3050] pt-8">
+              <div>
+                <h4 className="font-semibold text-cyan-400 mb-2">Education</h4>
+                <p className="text-gray-400 text-sm">Update with your educational background</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-cyan-400 mb-2">Certifications</h4>
+                <p className="text-gray-400 text-sm">Add your professional certifications here</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-cyan-400 mb-2">Languages</h4>
+                <p className="text-gray-400 text-sm">List your proficiency in different languages</p>
+              </div>
+            </div>
+          </div>
+
+            <div className="mt-12 p-6 bg-cyan-500/10 rounded-lg border border-cyan-500/30">
+              <p className="text-sm text-gray-300">
+                <span className="font-semibold text-cyan-400">📝 Ready to add your resume?</span> Place your resume PDF in the <code className="bg-[#1a1f3a] px-2 py-1 rounded text-cyan-400 font-mono">public/resume.pdf</code> directory, then the download button will work automatically!
+              </p>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
+}
