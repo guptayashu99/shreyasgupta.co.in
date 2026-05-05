@@ -17,26 +17,13 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>
-                <a href="#home" className="hover:text-white transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-white transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#experience" className="hover:text-white transition-colors">
-                  Experience
-                </a>
-              </li>
-              <li>
-                <a href="#resume" className="hover:text-white transition-colors">
-                  Resume
-                </a>
-              </li>
+              <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="#experience" className="hover:text-white transition-colors">Experience</a></li>
+              <li><a href="#certifications" className="hover:text-white transition-colors">Certifications</a></li>
+              <li><a href="#education" className="hover:text-white transition-colors">Education</a></li>
+              <li><a href="#recommendations" className="hover:text-white transition-colors">Recommendations</a></li>
+              <li><a href="#resume" className="hover:text-white transition-colors">Resume</a></li>
             </ul>
           </div>
           <div>

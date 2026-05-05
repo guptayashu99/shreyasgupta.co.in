@@ -10,22 +10,14 @@ export default function Header() {
               SG
             </a>
           </div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-300 hover:text-cyan-400 transition-colors">
-              Home
-            </a>
-            <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors">
-              About
-            </a>
-            <a href="#experience" className="text-gray-300 hover:text-cyan-400 transition-colors">
-              Experience
-            </a>
-            <a href="#certifications" className="text-gray-300 hover:text-cyan-400 transition-colors">
-              Certifications
-            </a>
-            <a href="#resume" className="text-gray-300 hover:text-cyan-400 transition-colors">
-              Resume
-            </a>
+          <nav className="hidden md:flex space-x-6">
+            <a href="#home" className="text-gray-300 hover:text-cyan-400 transition-colors">Home</a>
+            <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+            <a href="#experience" className="text-gray-300 hover:text-cyan-400 transition-colors">Experience</a>
+            <a href="#certifications" className="text-gray-300 hover:text-cyan-400 transition-colors">Certifications</a>
+            <a href="#education" className="text-gray-300 hover:text-cyan-400 transition-colors">Education</a>
+            <a href="#recommendations" className="text-gray-300 hover:text-cyan-400 transition-colors">Recommendations</a>
+            <a href="#resume" className="text-gray-300 hover:text-cyan-400 transition-colors">Resume</a>
           </nav>
         </div>
       </div>
