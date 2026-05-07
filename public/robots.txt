@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /resume-print
+Disallow: /email-signature
 
 Sitemap: https://shreyasgupta.co.in/sitemap.xml
