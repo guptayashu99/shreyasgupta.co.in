@@ -98,7 +98,7 @@ export default function Certifications() {
     },
     {
       id: '8',
-      title: 'Salesforce Certified PlatformAdministrator',
+      title: 'Salesforce Certified Platform Administrator',
       issuer: 'Salesforce',
       issued: 'Sep 2022',
       credentialId: '2604496',
