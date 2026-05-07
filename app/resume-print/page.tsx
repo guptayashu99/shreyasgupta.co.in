@@ -183,14 +183,26 @@ const css = `
   }
 
   .job ul {
-    padding-left: 13px;
+    list-style: none;
+    padding-left: 0;
   }
 
   .job ul li {
     font-size: 8.5pt;
     color: #374151;
     line-height: 1.45;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .job ul li::before {
+    content: '▸';
+    color: #22d3ee;
+    position: absolute;
+    left: 0;
+    font-size: 8pt;
+    line-height: 1.45;
   }
 
   /* ── Bottom grid ── */
@@ -252,10 +264,10 @@ const certifications = [
   { name: 'Scrum Master Certified (SMC)', issuer: 'Scrum Alliance', date: 'Sep 2025', expires: 'Sep 2027', id: '001726206' },
   { name: 'Salesforce Certified Platform App Builder', issuer: 'Salesforce', date: 'Jul 2025', id: '6328042' },
   { name: 'Certified Scrum Product Owner (CSPO)', issuer: 'Scrum Alliance', date: 'Jan 2025', expires: 'Sep 2027', id: '001726206' },
-  { name: 'Salesforce Certified AI Specialist', issuer: 'Salesforce', date: 'Dec 2024', id: '5475811' },
-  { name: 'Salesforce Certified Platform Developer I', issuer: 'Salesforce', date: 'Sep 2024', id: '4827368' },
-  { name: 'Salesforce Certified Associate', issuer: 'Salesforce', date: 'Feb 2024', id: '4104030' },
-  { name: 'Salesforce Certified Administrator (SCA)', issuer: 'Salesforce', date: 'Sep 2022', id: '2604496' },
+  { name: 'Salesforce Certified Agentforce Specialist', issuer: 'Salesforce', date: 'Dec 2024', id: '5475811' },
+  { name: 'Salesforce Certified Platform Developer', issuer: 'Salesforce', date: 'Sep 2024', id: '4827368' },
+  { name: 'Salesforce Certified Platform Foundations', issuer: 'Salesforce', date: 'Feb 2024', id: '4104030' },
+  { name: 'Salesforce Certified Platform Administrator', issuer: 'Salesforce', date: 'Sep 2022', id: '2604496' },
 ];
 
 export default function ResumePrint() {
@@ -274,7 +286,7 @@ export default function ResumePrint() {
           <div className="header-info">
             <h1>Shreyas Gupta</h1>
             <p className="header-title">
-              Agile Delivery Professional · Scrum Master · Salesforce GTM Systems · Driving Cross-Functional Execution &amp; Automation
+              Agile Delivery Professional · Scrum Master · Salesforce GTM Systems · Automation Architecture · AI Tooling
             </p>
             <div className="contact-row">
               <span>✉ work@shreyasgupta.co.in</span>
@@ -285,7 +297,7 @@ export default function ResumePrint() {
             </div>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/profile.jpg" alt="Shreyas Gupta" className="photo" />
+          <img src="/profile.webp" alt="Shreyas Gupta" className="photo" />
         </header>
 
         <div className="body">
@@ -294,14 +306,13 @@ export default function ResumePrint() {
           <section className="summary">
             <h2>Professional Summary</h2>
             <p>
-              Agile Delivery Professional and Scrum Master with 5 years of experience across Salesforce and GTM systems,
-              focused on driving reliable and scalable execution for customer-facing teams. At UKG, drives Salesforce-led GTM
-              initiatives for Sales Enablement and Opportunity Management, partnering with Product, Engineering, and business
-              stakeholders to plan delivery, manage backlogs, and keep releases predictable. Operates at the intersection of
-              planning and execution — managing dependencies, identifying risks early, and coordinating across teams to ensure
-              customer-facing commitments are consistently met. Leverages automation as part of the delivery strategy to improve
-              release confidence and enable faster, stable deployments. Building toward delivery and program management roles
-              to own end-to-end execution and scale Salesforce GTM systems effectively.
+              Scrum Master and Agile Delivery Professional with 5+ years working in Salesforce GTM systems. Currently at UKG,
+              running delivery for the GTM team while staying hands-on across the full lifecycle — requirements, solutioning,
+              automation strategy, and release. Own the GTM automation approach end-to-end, deciding what gets automated and
+              building the frameworks the team works from. Background spans Selenium Java, Playwright (POC lead), AI agents
+              (ChatGPT, Copilot), and Python tooling. The combination of technical depth and delivery ownership is what makes
+              engineering conversations productive and sprint commitments realistic. Working towards Delivery Manager and
+              Program Lead roles.
             </p>
           </section>
 
@@ -311,19 +322,19 @@ export default function ResumePrint() {
             <div className="skills-grid">
               <div className="skill-group">
                 <strong>Delivery &amp; Agile Leadership</strong>
-                <p>Agile Delivery &amp; Execution · Scrum Master · Release Planning &amp; Delivery Accountability · Sprint Planning &amp; Backlog Grooming · Cross-Team Coordination &amp; Stakeholder Alignment · Requirement Understanding &amp; Validation</p>
+                <p>Delivery Leadership &amp; Ownership · Scrum Master · Release Planning &amp; Delivery Accountability · Sprint Planning &amp; Roadmap Management · Cross-Team Coordination &amp; Stakeholder Alignment · Risk Management &amp; Dependency Resolution · Program &amp; Portfolio Delivery</p>
               </div>
               <div className="skill-group">
                 <strong>Salesforce &amp; GTM</strong>
-                <p>Salesforce GTM Platform Delivery · Salesforce Sales Cloud · Salesforce Financial Services Cloud · Salesforce AgentForce · Salesforce Integrations (Seismic) · Apex Programming</p>
+                <p>Salesforce GTM Platform Delivery · Salesforce Sales Cloud · Salesforce Financial Services Cloud · Salesforce Agentforce · Salesforce Integrations (Seismic) · Apex Programming</p>
               </div>
               <div className="skill-group">
-                <strong>Quality &amp; Automation</strong>
-                <p>Test Automation Strategy &amp; Framework Design · Regression &amp; Release Validation · Quality Risk Identification</p>
+                <strong>Automation Architecture &amp; Quality</strong>
+                <p>Automation Strategy &amp; Architecture · Framework Design &amp; Ownership · Playwright (POC Lead) · Selenium Java · Regression &amp; Release Validation · Quality Risk Identification · CI/CD Integration</p>
               </div>
               <div className="skill-group">
                 <strong>Tools &amp; AI</strong>
-                <p>JIRA &amp; Azure DevOps · Generative AI &amp; Agentic Systems · Automation Tools (Provar, VS Code)</p>
+                <p>JIRA &amp; Azure DevOps · AI Agents (ChatGPT, Copilot) · Python Scripting &amp; Tooling · Provar &amp; VS Code · TestRail</p>
               </div>
             </div>
           </section>
@@ -344,12 +355,13 @@ export default function ResumePrint() {
                   <p className="job-duration">6 months</p>
                 </div>
               </div>
-              <p className="job-desc">Driving Salesforce-led GTM delivery across Lead-to-Opportunity workflows as Scrum Master.</p>
+              <p className="job-desc">Scrum Master for the GTM team, working across delivery, automation strategy, and tooling on Salesforce Lead-to-Opportunity workflows.</p>
               <ul>
-                <li>Serve as Scrum Master for GTM team, ensuring predictable sprint execution and steady delivery cadence</li>
-                <li>Work closely with business stakeholders during refinement to understand unclear requirements and turn them into actionable, engineering-ready user stories</li>
-                <li>Partner with Engineering on solution approaches, trade-offs, and realistic timelines, staying hands-on to assess implementation complexity</li>
-                <li>Drive automation as part of the delivery process to improve release confidence and support stable, high-quality releases</li>
+                <li>Run delivery as Scrum Master — sprint planning, backlog management, dependency tracking, and making sure the team ships what it commits to</li>
+                <li>Own the GTM automation approach — decide what gets automated and in what order, and build the frameworks the team works from</li>
+                <li>Sit in requirements discussions when there are gaps, working through feasibility with engineering before stories are finalised</li>
+                <li>Built AI agents on ChatGPT and Copilot to cut down team overhead; wrote a Python tool to migrate the full test suite from TestRail to Azure DevOps</li>
+                <li>Leading a Playwright POC to evaluate whether it's a better fit for the pipeline than the current framework</li>
               </ul>
             </div>
 
@@ -365,12 +377,12 @@ export default function ResumePrint() {
                   <p className="job-duration">1 year</p>
                 </div>
               </div>
-              <p className="job-desc">Worked on Salesforce-based GTM systems, contributing across automation, engineering, and Agile delivery for Lead-to-Opportunity workflows.</p>
+              <p className="job-desc">Worked across automation, delivery, and solutioning for the GTM team — building the technical and delivery habits that carried into the senior role.</p>
               <ul>
-                <li>Collaborated with Product, Business Analysts, and Engineering on backlog refinement to ensure user stories were clear and execution-ready</li>
-                <li>Built and maintained UI and API automation to support stable releases, improve test coverage, and reduce manual effort during delivery cycles</li>
-                <li>Gained hands-on experience with implementation and solutioning, working closely with developers to understand system behavior and support better estimation</li>
-                <li>Actively identified risks, resolved blockers, and supported smooth sprint execution across the team</li>
+                <li>Took part in backlog refinement with Product, BAs, and Engineering to make sure stories were clear and ready to build before sprint start</li>
+                <li>Built and maintained UI and API automation across GTM workflows, which helped stabilise releases and reduced the manual testing load</li>
+                <li>Got into solutioning conversations with developers regularly — useful for catching scope gaps early and keeping estimates realistic</li>
+                <li>Flagged risks and blockers early in sprints rather than waiting for them to surface at the wrong moment</li>
               </ul>
             </div>
 
@@ -386,12 +398,12 @@ export default function ResumePrint() {
                   <p className="job-duration">2 years 2 months</p>
                 </div>
               </div>
-              <p className="job-desc">Supported Agile delivery teams on Salesforce Sales Cloud and Financial Services Cloud workflows, with integrated platforms including Seismic.</p>
+              <p className="job-desc">Quality Engineer on Salesforce Sales Cloud and Financial Services Cloud for Lincoln Financial, working across automation, delivery, and GTM workflows integrated with Seismic.</p>
               <ul>
-                <li>Owned functional and regression validation for multiple Salesforce features across Sales and Financial Services use cases, ensuring release-ready quality</li>
-                <li>Built and maintained 300+ automated test cases across UI and integration flows, reducing post-deployment issues and improving release stability</li>
-                <li>Collaborated with Salesforce developers, BAs, and stakeholders to review requirements and provide early quality risk feedback</li>
-                <li>Supported CI/CD pipelines by validating builds across environments; participated in sprint planning, backlog grooming, and retrospectives</li>
+                <li>Responsible for quality across Salesforce Sales Cloud and FSC releases — multiple feature tracks running at the same time, all needing to be release-ready</li>
+                <li>Built a 300+ test suite in Selenium Java covering UI and integration flows; made a visible difference in post-release defect rates</li>
+                <li>Involved early in requirements reviews with developers, BAs, and stakeholders — catching issues before they made it into builds saved a lot of rework</li>
+                <li>Plugged into CI/CD pipelines for environment validation and was a regular part of sprint ceremonies from planning through to retros</li>
               </ul>
             </div>
 
@@ -407,12 +419,12 @@ export default function ResumePrint() {
                   <p className="job-duration">1 year 6 months</p>
                 </div>
               </div>
-              <p className="job-desc">Worked on Agile delivery teams supporting Salesforce Sales Cloud and Marketing Cloud applications.</p>
+              <p className="job-desc">Started as a Test Engineer on Salesforce Sales Cloud and Marketing Cloud, picking up the fundamentals of quality, automation, and Agile delivery.</p>
               <ul>
-                <li>Executed functional and regression testing across Salesforce releases to maintain stability as new configurations were introduced</li>
-                <li>Collaborated with developers, BAs, and stakeholders to clarify Salesforce workflows and identify gaps early in the delivery cycle</li>
-                <li>Contributed to automation and repeatable validation for Salesforce workflows to reduce manual overhead and support faster releases</li>
-                <li>Participated in sprint planning, backlog discussions, and retrospectives with quality and feasibility inputs</li>
+                <li>Ran functional and regression testing across Salesforce releases — keeping things stable when configuration was changing frequently</li>
+                <li>Worked with developers, BAs, and stakeholders to understand workflows and catch gaps early rather than discovering them mid-sprint</li>
+                <li>Built reusable automation scripts for Salesforce flows, which reduced manual effort and made release cycles more consistent</li>
+                <li>Contributed to sprint planning and backlog discussions from a quality angle — flagging what was testable, what wasn't, and what needed more clarity</li>
               </ul>
             </div>
           </section>
