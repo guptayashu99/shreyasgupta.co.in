@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 
@@ -74,35 +74,35 @@ export default function Certifications() {
     },
     {
       id: '5',
-      title: 'Salesforce Certified AI Specialist',
+      title: 'Salesforce Certified Agentforce Specialist',
       issuer: 'Salesforce',
       issued: 'Dec 2024',
       credentialId: '5475811',
-      badgeFile: 'Salesforce Certified AI Specialist.png',
+      badgeFile: 'Salesforce Certified Agentforce Specialist.png',
     },
     {
       id: '6',
-      title: 'Salesforce Certified Platform Developer I',
+      title: 'Salesforce Certified Platform Developer',
       issuer: 'Salesforce',
       issued: 'Sep 2024',
       credentialId: '4827368',
-      badgeFile: 'Salesforce Certified Platform Developer I.png',
+      badgeFile: 'Salesforce Certified Platform Developer.png',
     },
     {
       id: '7',
-      title: 'Salesforce Certified Associate',
+      title: 'Salesforce Certified Platform Foundations',
       issuer: 'Salesforce',
       issued: 'Feb 2024',
       credentialId: '4104030',
-      badgeFile: 'Salesforce Certified Associate.png',
+      badgeFile: 'Salesforce Certified Platform Foundations.png',
     },
     {
       id: '8',
-      title: 'Salesforce Certified Administrator (SCA)',
+      title: 'Salesforce Certified PlatformAdministrator',
       issuer: 'Salesforce',
       issued: 'Sep 2022',
       credentialId: '2604496',
-      badgeFile: 'Salesforce Certified Administrator (SCA).png',
+      badgeFile: 'Salesforce Certified Platform Administrator.png',
     },
   ];
 
@@ -149,3 +149,4 @@ export default function Certifications() {
     </section>
   );
 }
+
