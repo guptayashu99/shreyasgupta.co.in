@@ -1,5 +1,7 @@
 'use client';
 
+import { experiences, certifications, education, skillGroups } from '@/lib/data';
+
 const css = `
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -259,16 +261,6 @@ const css = `
   }
 `;
 
-const certifications = [
-  { name: 'Salesforce Certified Sales Cloud Consultant', issuer: 'Salesforce', date: 'Feb 2026', id: '7450870' },
-  { name: 'Scrum Master Certified (SMC)', issuer: 'Scrum Alliance', date: 'Sep 2025', expires: 'Sep 2027', id: '001726206' },
-  { name: 'Salesforce Certified Platform App Builder', issuer: 'Salesforce', date: 'Jul 2025', id: '6328042' },
-  { name: 'Certified Scrum Product Owner (CSPO)', issuer: 'Scrum Alliance', date: 'Jan 2025', expires: 'Sep 2027', id: '001726206' },
-  { name: 'Salesforce Certified Agentforce Specialist', issuer: 'Salesforce', date: 'Dec 2024', id: '5475811' },
-  { name: 'Salesforce Certified Platform Developer', issuer: 'Salesforce', date: 'Sep 2024', id: '4827368' },
-  { name: 'Salesforce Certified Platform Foundations', issuer: 'Salesforce', date: 'Feb 2024', id: '4104030' },
-  { name: 'Salesforce Certified Platform Administrator', issuer: 'Salesforce', date: 'Sep 2022', id: '2604496' },
-];
 
 export default function ResumePrint() {
   return (
@@ -320,113 +312,37 @@ export default function ResumePrint() {
           <section>
             <h2>Core Competencies</h2>
             <div className="skills-grid">
-              <div className="skill-group">
-                <strong>Delivery &amp; Agile Leadership</strong>
-                <p>Delivery Leadership &amp; Ownership · Scrum Master · Release Planning &amp; Delivery Accountability · Sprint Planning &amp; Roadmap Management · Cross-Team Coordination &amp; Stakeholder Alignment · Risk Management &amp; Dependency Resolution · Program &amp; Portfolio Delivery</p>
-              </div>
-              <div className="skill-group">
-                <strong>Salesforce &amp; GTM</strong>
-                <p>Salesforce GTM Platform Delivery · Salesforce Sales Cloud · Salesforce Financial Services Cloud · Salesforce Agentforce · Salesforce Integrations (Seismic) · Apex Programming</p>
-              </div>
-              <div className="skill-group">
-                <strong>Automation Architecture &amp; Quality</strong>
-                <p>Automation Strategy &amp; Architecture · Framework Design &amp; Ownership · Playwright (POC Lead) · Selenium Java · Regression &amp; Release Validation · Quality Risk Identification · CI/CD Integration</p>
-              </div>
-              <div className="skill-group">
-                <strong>Tools &amp; AI</strong>
-                <p>JIRA &amp; Azure DevOps · AI Agents (ChatGPT, Copilot) · Python Scripting &amp; Tooling · Provar &amp; VS Code · TestRail</p>
-              </div>
+              {skillGroups.map((group) => (
+                <div key={group.label} className="skill-group">
+                  <strong>{group.label}</strong>
+                  <p>{group.skills.join(' · ')}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* Professional Experience */}
           <section>
             <h2>Professional Experience</h2>
-
-            <div className="job">
-              <div className="job-header">
-                <div>
-                  <h3>Senior IT Software Engineer</h3>
-                  <p className="job-company">UKG (Ultimate Kronos Group)</p>
-                  <p className="job-location">Noida, Uttar Pradesh, India · Hybrid</p>
+            {experiences.map((exp) => (
+              <div key={exp.id} className="job">
+                <div className="job-header">
+                  <div>
+                    <h3>{exp.title}</h3>
+                    <p className="job-company">{exp.companyFull}</p>
+                    <p className="job-location">{exp.location}</p>
+                  </div>
+                  <div>
+                    <p className="job-period">{exp.period}</p>
+                    <p className="job-duration">{exp.duration}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="job-period">Dec 2025 – Present</p>
-                  <p className="job-duration">6 months</p>
-                </div>
+                <p className="job-desc">{exp.description}</p>
+                <ul>
+                  {exp.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                </ul>
               </div>
-              <p className="job-desc">Scrum Master for the GTM team, working across delivery, automation strategy, and tooling on Salesforce Lead-to-Opportunity workflows.</p>
-              <ul>
-                <li>Run delivery as Scrum Master — sprint planning, backlog management, dependency tracking, and making sure the team ships what it commits to</li>
-                <li>Own the GTM automation approach — decide what gets automated and in what order, and build the frameworks the team works from</li>
-                <li>Sit in requirements discussions when there are gaps, working through feasibility with engineering before stories are finalised</li>
-                <li>Built AI agents on ChatGPT and Copilot to cut down team overhead; wrote a Python tool to migrate the full test suite from TestRail to Azure DevOps</li>
-                <li>Leading a Playwright POC to evaluate whether it's a better fit for the pipeline than the current framework</li>
-              </ul>
-            </div>
-
-            <div className="job">
-              <div className="job-header">
-                <div>
-                  <h3>IT Software Engineer</h3>
-                  <p className="job-company">UKG (Ultimate Kronos Group)</p>
-                  <p className="job-location">Noida, Uttar Pradesh, India · Hybrid</p>
-                </div>
-                <div>
-                  <p className="job-period">Dec 2024 – Dec 2025</p>
-                  <p className="job-duration">1 year</p>
-                </div>
-              </div>
-              <p className="job-desc">Worked across automation, delivery, and solutioning for the GTM team — building the technical and delivery habits that carried into the senior role.</p>
-              <ul>
-                <li>Took part in backlog refinement with Product, BAs, and Engineering to make sure stories were clear and ready to build before sprint start</li>
-                <li>Built and maintained UI and API automation across GTM workflows, which helped stabilise releases and reduced the manual testing load</li>
-                <li>Got into solutioning conversations with developers regularly — useful for catching scope gaps early and keeping estimates realistic</li>
-                <li>Flagged risks and blockers early in sprints rather than waiting for them to surface at the wrong moment</li>
-              </ul>
-            </div>
-
-            <div className="job">
-              <div className="job-header">
-                <div>
-                  <h3>Quality Engineer</h3>
-                  <p className="job-company">LTIMindtree</p>
-                  <p className="job-location">Bengaluru, Karnataka, India · Hybrid</p>
-                </div>
-                <div>
-                  <p className="job-period">Nov 2022 – Dec 2024</p>
-                  <p className="job-duration">2 years 2 months</p>
-                </div>
-              </div>
-              <p className="job-desc">Quality Engineer on Salesforce Sales Cloud and Financial Services Cloud for Lincoln Financial, working across automation, delivery, and GTM workflows integrated with Seismic.</p>
-              <ul>
-                <li>Responsible for quality across Salesforce Sales Cloud and FSC releases — multiple feature tracks running at the same time, all needing to be release-ready</li>
-                <li>Built a 300+ test suite in Selenium Java covering UI and integration flows; made a visible difference in post-release defect rates</li>
-                <li>Involved early in requirements reviews with developers, BAs, and stakeholders — catching issues before they made it into builds saved a lot of rework</li>
-                <li>Plugged into CI/CD pipelines for environment validation and was a regular part of sprint ceremonies from planning through to retros</li>
-              </ul>
-            </div>
-
-            <div className="job">
-              <div className="job-header">
-                <div>
-                  <h3>Test Engineer</h3>
-                  <p className="job-company">Mindtree</p>
-                  <p className="job-location">Pune District, Maharashtra, India · Hybrid</p>
-                </div>
-                <div>
-                  <p className="job-period">Jun 2021 – Nov 2022</p>
-                  <p className="job-duration">1 year 6 months</p>
-                </div>
-              </div>
-              <p className="job-desc">Started as a Test Engineer on Salesforce Sales Cloud and Marketing Cloud, picking up the fundamentals of quality, automation, and Agile delivery.</p>
-              <ul>
-                <li>Ran functional and regression testing across Salesforce releases — keeping things stable when configuration was changing frequently</li>
-                <li>Worked with developers, BAs, and stakeholders to understand workflows and catch gaps early rather than discovering them mid-sprint</li>
-                <li>Built reusable automation scripts for Salesforce flows, which reduced manual effort and made release cycles more consistent</li>
-                <li>Contributed to sprint planning and backlog discussions from a quality angle — flagging what was testable, what wasn't, and what needed more clarity</li>
-              </ul>
-            </div>
+            ))}
           </section>
 
           {/* Certifications + Education */}
@@ -434,10 +350,10 @@ export default function ResumePrint() {
             <section>
               <h2>Certifications</h2>
               {certifications.map((cert) => (
-                <div key={cert.id + cert.date} className="cert-item">
+                <div key={cert.id} className="cert-item">
                   <div className="cert-name">{cert.name}</div>
                   <div className="cert-meta">
-                    {cert.issuer} · Issued {cert.date}{cert.expires ? ` · Expires ${cert.expires}` : ''} · ID: {cert.id}
+                    {cert.issuer} · Issued {cert.issued}{cert.expires ? ` · Expires ${cert.expires}` : ''} · ID: {cert.credentialId}
                   </div>
                 </div>
               ))}
@@ -445,22 +361,13 @@ export default function ResumePrint() {
 
             <section>
               <h2>Education</h2>
-              <div className="edu-item">
-                <div className="edu-degree">Bachelor of Technology</div>
-                <div className="edu-school">Electrical, Electronics &amp; Communications Engineering</div>
-                <div className="edu-school">Manipal University Jaipur</div>
-                <div className="edu-meta">Jul 2017 – Jun 2021 · GPA 7.84</div>
-              </div>
-              <div className="edu-item">
-                <div className="edu-degree">Senior Secondary — Science</div>
-                <div className="edu-school">Indraprastha International School</div>
-                <div className="edu-meta">2015 – 2017 · 75%</div>
-              </div>
-              <div className="edu-item">
-                <div className="edu-degree">Secondary Education</div>
-                <div className="edu-school">Indraprastha International School</div>
-                <div className="edu-meta">2012 – 2015 · GPA 9.4</div>
-              </div>
+              {education.map((item) => (
+                <div key={item.id} className="edu-item">
+                  <div className="edu-degree">{item.degree}</div>
+                  <div className="edu-school">{item.institution}</div>
+                  <div className="edu-meta">{item.period} · {item.grade}</div>
+                </div>
+              ))}
             </section>
           </div>
 

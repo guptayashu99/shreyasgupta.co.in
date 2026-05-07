@@ -1,38 +1,8 @@
 'use client';
 
-interface EducationItem {
-  id: string;
-  degree: string;
-  institution: string;
-  period: string;
-  grade: string;
-}
+import { education } from '@/lib/data';
 
 export default function Education() {
-  const education: EducationItem[] = [
-    {
-      id: '1',
-      degree: 'Bachelor of Technology — Electrical, Electronics and Communications Engineering',
-      institution: 'Manipal University Jaipur',
-      period: 'Jul 2017 – Jun 2021',
-      grade: 'GPA 7.84',
-    },
-    {
-      id: '2',
-      degree: 'Senior Secondary — Science',
-      institution: 'Indraprastha International School',
-      period: '2015 – 2017',
-      grade: '75%',
-    },
-    {
-      id: '3',
-      degree: 'Secondary Education',
-      institution: 'Indraprastha International School',
-      period: '2012 – 2015',
-      grade: '9.4 GPA',
-    },
-  ];
-
   return (
     <section id="education" className="section-padding bg-[#0d1235] border-t border-[#2a3050]">
       <div className="container-custom">

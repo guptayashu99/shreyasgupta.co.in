@@ -1,17 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-interface Certification {
-  id: string;
-  title: string;
-  issuer: string;
-  issued: string;
-  expires?: string;
-  credentialId: string;
-  badgeFile: string;
-  verifyUrl: string;
-}
+import { certifications } from '@/lib/data';
 
 function CertBadge({ file, title }: { file: string; title: string }) {
   const [failed, setFailed] = useState(false);
@@ -39,87 +29,7 @@ function CertBadge({ file, title }: { file: string; title: string }) {
   );
 }
 
-const SF_VERIFY = 'https://trailhead.salesforce.com/credentials/verification';
-const SA_VERIFY = 'https://www.scrumalliance.org/community/profile/shreyasgupta';
-
 export default function Certifications() {
-  const certifications: Certification[] = [
-    {
-      id: '1',
-      title: 'Salesforce Certified Sales Cloud Consultant',
-      issuer: 'Salesforce',
-      issued: 'Feb 2026',
-      credentialId: '7450870',
-      badgeFile: 'Salesforce Certified Sales Cloud Consultant.webp',
-      verifyUrl: SF_VERIFY,
-    },
-    {
-      id: '2',
-      title: 'Scrum Master Certified (SMC)',
-      issuer: 'Scrum Alliance',
-      issued: 'Sep 2025',
-      expires: 'Sep 2027',
-      credentialId: '001726206',
-      badgeFile: 'Scrum Master Certified (SMC).png',
-      verifyUrl: SA_VERIFY,
-    },
-    {
-      id: '3',
-      title: 'Salesforce Certified Platform App Builder',
-      issuer: 'Salesforce',
-      issued: 'Jul 2025',
-      credentialId: '6328042',
-      badgeFile: 'Salesforce Certified Platform App Builder.webp',
-      verifyUrl: SF_VERIFY,
-    },
-    {
-      id: '4',
-      title: 'Certified Scrum Product Owner (CSPO)',
-      issuer: 'Scrum Alliance',
-      issued: 'Jan 2025',
-      expires: 'Sep 2027',
-      credentialId: '001726206',
-      badgeFile: 'Certified Scrum Product Owner (CSPO).png',
-      verifyUrl: SA_VERIFY,
-    },
-    {
-      id: '5',
-      title: 'Salesforce Certified Agentforce Specialist',
-      issuer: 'Salesforce',
-      issued: 'Dec 2024',
-      credentialId: '5475811',
-      badgeFile: 'Salesforce Certified Agentforce Specialist.webp',
-      verifyUrl: SF_VERIFY,
-    },
-    {
-      id: '6',
-      title: 'Salesforce Certified Platform Developer',
-      issuer: 'Salesforce',
-      issued: 'Sep 2024',
-      credentialId: '4827368',
-      badgeFile: 'Salesforce Certified Platform Developer.webp',
-      verifyUrl: SF_VERIFY,
-    },
-    {
-      id: '7',
-      title: 'Salesforce Certified Platform Foundations',
-      issuer: 'Salesforce',
-      issued: 'Feb 2024',
-      credentialId: '4104030',
-      badgeFile: 'Salesforce Certified Platform Foundations.webp',
-      verifyUrl: SF_VERIFY,
-    },
-    {
-      id: '8',
-      title: 'Salesforce Certified Platform Administrator',
-      issuer: 'Salesforce',
-      issued: 'Sep 2022',
-      credentialId: '2604496',
-      badgeFile: 'Salesforce Certified Platform Administrator.webp',
-      verifyUrl: SF_VERIFY,
-    },
-  ];
-
   return (
     <section className="section-padding bg-[#0a0e27]">
       <div className="container-custom" id="certifications">
@@ -132,10 +42,10 @@ export default function Certifications() {
               <div key={cert.id} className="card-dark p-6">
                 <div className="flex items-start space-x-4 mb-3">
                   <div className="flex-shrink-0">
-                    <CertBadge file={cert.badgeFile} title={cert.title} />
+                    <CertBadge file={cert.badgeFile} title={cert.name} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white">{cert.title}</h3>
+                    <h3 className="text-lg font-semibold text-white">{cert.name}</h3>
                     <p className="text-cyan-400 font-medium">{cert.issuer}</p>
                   </div>
                 </div>
