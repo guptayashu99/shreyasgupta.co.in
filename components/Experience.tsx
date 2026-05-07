@@ -81,7 +81,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="section-padding bg-[#0a0e27] border-t border-[#2a3050]">
+    <section id="experience" className="section-padding bg-[#0d1235] border-t border-[#2a3050]">
       <div className="container-custom">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
           Professional <span className="text-cyan-400">Experience</span>
@@ -92,14 +92,12 @@ export default function Experience() {
               <div className="card-dark p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white flex items-center justify-center p-2 shadow-sm">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`/company-logos/${exp.logoFile}`}
                         alt={`${exp.company} logo`}
-                        width={72}
-                        height={72}
-                        className="object-contain"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                     <div>

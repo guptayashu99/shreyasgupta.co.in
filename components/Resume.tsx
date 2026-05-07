@@ -11,7 +11,7 @@ export default function Resume() {
   };
 
   return (
-    <section id="resume" className="section-padding bg-[#0a0e27] border-t border-[#2a3050]">
+    <section id="resume" className="section-padding bg-[#0d1235] border-t border-[#2a3050]">
       <div className="container-custom">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
           Resume & <span className="text-cyan-400">CV</span>
