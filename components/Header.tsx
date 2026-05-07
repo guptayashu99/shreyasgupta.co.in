@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Logo from '@/components/Logo';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -35,8 +36,9 @@ export default function Header() {
     <header className="sticky top-0 bg-[#0a0e27]/95 backdrop-blur border-b border-[#2a3050] shadow-lg z-50">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
-          <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
-            SG
+          <a href="#home" className="flex items-center gap-2.5">
+            <Logo size={36} />
+            <span className="text-lg font-bold text-white">Shreyas <span className="text-cyan-400">Gupta</span></span>
           </a>
 
           {/* Desktop nav */}

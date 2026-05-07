@@ -1,5 +1,7 @@
 'use client';
 
+import Logo from '@/components/Logo';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -8,7 +10,10 @@ export default function Footer() {
       <div className="container-custom py-12">
         <div className="grid md:grid-cols-3 gap-12 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Shreyas Gupta</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Logo size={40} />
+              <h3 className="text-xl font-bold">Shreyas <span className="text-cyan-400">Gupta</span></h3>
+            </div>
             <p className="text-gray-400">
               Agile Delivery Professional | Scrum Master | Salesforce GTM Systems.
               Driving cross-functional execution and automation for reliable, scalable outcomes.
