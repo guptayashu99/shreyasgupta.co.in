@@ -54,9 +54,9 @@ export default function About() {
               feasible before we commit to anything. It saves a lot of mid-sprint surprises.
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
-              I also own our automation approach for GTM. Not just running tests, but deciding what&apos;s worth automating,
-              when, and building the frameworks the team uses. It started informally and has grown into a defined
-              responsibility over time.
+              I also own the automation approach for the GTM team. Before stepping into the Scrum Master role, I was the
+              Automation Architect for the space — deciding what gets automated, in what order, and building the frameworks
+              the team works from. That technical ownership carried forward into the delivery role.
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
               I tend to pick up problems the team hasn&apos;t gotten to yet. I built AI agents in ChatGPT and Copilot to cut down
