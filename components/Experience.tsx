@@ -4,8 +4,7 @@ interface ExperienceItem {
   id: string;
   title: string;
   company: string;
-  logoText: string;
-  logoBg: string;
+  logoFile: string;
   period: string;
   duration: string;
   location: string;
@@ -19,8 +18,7 @@ export default function Experience() {
       id: '1',
       title: 'Senior IT Software Engineer',
       company: 'UKG',
-      logoText: 'UKG',
-      logoBg: 'bg-[#1a56db]',
+      logoFile: 'ukg_logo.jpg',
       period: 'Dec 2025 – Present',
       duration: '6 mos',
       location: 'Noida, Uttar Pradesh, India · Hybrid',
@@ -36,8 +34,7 @@ export default function Experience() {
       id: '2',
       title: 'IT Software Engineer',
       company: 'UKG',
-      logoText: 'UKG',
-      logoBg: 'bg-[#1a56db]',
+      logoFile: 'ukg_logo.jpg',
       period: 'Dec 2024 – Dec 2025',
       duration: '1 yr',
       location: 'Noida, Uttar Pradesh, India · Hybrid',
@@ -53,8 +50,7 @@ export default function Experience() {
       id: '3',
       title: 'Quality Engineer',
       company: 'LTIMindtree',
-      logoText: 'LTI',
-      logoBg: 'bg-[#059669]',
+      logoFile: 'ltimindtree_logo.jpg',
       period: 'Nov 2022 – Dec 2024',
       duration: '2 yrs 2 mos',
       location: 'Bengaluru, Karnataka, India · Hybrid',
@@ -70,8 +66,7 @@ export default function Experience() {
       id: '4',
       title: 'Test Engineer',
       company: 'Mindtree',
-      logoText: 'MT',
-      logoBg: 'bg-[#0891b2]',
+      logoFile: 'mindtreeltd_logo.jpg',
       period: 'Jun 2021 – Nov 2022',
       duration: '1 yr 6 mos',
       location: 'Pune District, Maharashtra, India · Hybrid',
@@ -97,8 +92,13 @@ export default function Experience() {
               <div className="card-dark p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                   <div className="flex items-start gap-4">
-                    <div className={`flex-shrink-0 w-12 h-12 rounded-xl ${exp.logoBg} flex items-center justify-center text-white font-bold text-xs tracking-wide`}>
-                      {exp.logoText}
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center p-1 shadow-sm">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/company-logos/${exp.logoFile}`}
+                        alt={`${exp.company} logo`}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
