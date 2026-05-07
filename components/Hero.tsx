@@ -43,8 +43,9 @@ export default function Hero() {
             </div>
             <div className="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
               <a
-                href="/resume.pdf"
-                download="Shreyas_Gupta_Resume.pdf"
+                href="https://shreyasgupta.co.in/resume-print"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-[#0a0e27] font-semibold transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
