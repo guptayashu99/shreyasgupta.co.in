@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 interface Certification {
   id: string;
   title: string;
@@ -7,6 +9,31 @@ interface Certification {
   issued: string;
   expires?: string;
   credentialId: string;
+  badgeFile: string;
+}
+
+function CertBadge({ file, title }: { file: string; title: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (!failed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={`/certification-badges/${file}`}
+        alt={`${title} badge`}
+        width={48}
+        height={48}
+        className="object-contain"
+        onError={() => setFailed(true)}
+      />
+    );
+  }
+
+  return (
+    <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
 }
 
 export default function Certifications() {
@@ -17,6 +44,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Feb 2026',
       credentialId: '7450870',
+      badgeFile: 'Salesforce Certified Sales Cloud Consultant.png',
     },
     {
       id: '2',
@@ -25,6 +53,7 @@ export default function Certifications() {
       issued: 'Sep 2025',
       expires: 'Sep 2027',
       credentialId: '001726206',
+      badgeFile: 'Scrum Master Certified (SMC).png',
     },
     {
       id: '3',
@@ -32,6 +61,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Jul 2025',
       credentialId: '6328042',
+      badgeFile: 'Salesforce Certified Platform App Builder.png',
     },
     {
       id: '4',
@@ -40,6 +70,7 @@ export default function Certifications() {
       issued: 'Jan 2025',
       expires: 'Sep 2027',
       credentialId: '001726206',
+      badgeFile: 'Certified Scrum Product Owner (CSPO).png',
     },
     {
       id: '5',
@@ -47,6 +78,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Dec 2024',
       credentialId: '5475811',
+      badgeFile: 'Salesforce Certified AI Specialist.png',
     },
     {
       id: '6',
@@ -54,6 +86,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Sep 2024',
       credentialId: '4827368',
+      badgeFile: 'Salesforce Certified Platform Developer I.png',
     },
     {
       id: '7',
@@ -61,6 +94,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Feb 2024',
       credentialId: '4104030',
+      badgeFile: 'Salesforce Certified Associate.png',
     },
     {
       id: '8',
@@ -68,6 +102,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Sep 2022',
       credentialId: '2604496',
+      badgeFile: 'Salesforce Certified Administrator (SCA).png',
     },
   ];
 
@@ -82,22 +117,8 @@ export default function Certifications() {
             {certifications.map((cert) => (
               <div key={cert.id} className="card-dark p-6">
                 <div className="flex items-start space-x-3 mb-3">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600">
-                      <svg
-                        className="h-6 w-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
+                  <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600">
+                    <CertBadge file={cert.badgeFile} title={cert.title} />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white">{cert.title}</h3>
