@@ -50,7 +50,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Feb 2026',
       credentialId: '7450870',
-      badgeFile: 'Salesforce Certified Sales Cloud Consultant.png',
+      badgeFile: 'Salesforce Certified Sales Cloud Consultant.webp',
       verifyUrl: SF_VERIFY,
     },
     {
@@ -69,7 +69,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Jul 2025',
       credentialId: '6328042',
-      badgeFile: 'Salesforce Certified Platform App Builder.png',
+      badgeFile: 'Salesforce Certified Platform App Builder.webp',
       verifyUrl: SF_VERIFY,
     },
     {
@@ -88,7 +88,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Dec 2024',
       credentialId: '5475811',
-      badgeFile: 'Salesforce Certified Agentforce Specialist.png',
+      badgeFile: 'Salesforce Certified Agentforce Specialist.webp',
       verifyUrl: SF_VERIFY,
     },
     {
@@ -97,7 +97,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Sep 2024',
       credentialId: '4827368',
-      badgeFile: 'Salesforce Certified Platform Developer.png',
+      badgeFile: 'Salesforce Certified Platform Developer.webp',
       verifyUrl: SF_VERIFY,
     },
     {
@@ -106,7 +106,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Feb 2024',
       credentialId: '4104030',
-      badgeFile: 'Salesforce Certified Platform Foundations.png',
+      badgeFile: 'Salesforce Certified Platform Foundations.webp',
       verifyUrl: SF_VERIFY,
     },
     {
@@ -115,7 +115,7 @@ export default function Certifications() {
       issuer: 'Salesforce',
       issued: 'Sep 2022',
       credentialId: '2604496',
-      badgeFile: 'Salesforce Certified Platform Administrator.png',
+      badgeFile: 'Salesforce Certified Platform Administrator.webp',
       verifyUrl: SF_VERIFY,
     },
   ];

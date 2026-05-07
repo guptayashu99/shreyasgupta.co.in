@@ -88,7 +88,7 @@ export default function Hero() {
           <div className="flex justify-center">
             <div className="relative w-80 h-96 rounded-2xl overflow-hidden border-2 border-cyan-500 shadow-2xl shadow-cyan-500/20">
               <Image
-                src="/profile.jpg"
+                src="/profile.webp"
                 alt="Shreyas Gupta"
                 fill
                 className="object-cover"
