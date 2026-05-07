@@ -5,16 +5,16 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Shreyas Gupta - Agile Delivery Professional',
+  title: 'Shreyas Gupta | Agile Delivery Professional & Scrum Master',
   description:
-    'Portfolio of Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years of experience in Salesforce GTM systems.',
+    'Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
   alternates: {
     canonical: 'https://shreyasgupta.co.in',
   },
   openGraph: {
-    title: 'Shreyas Gupta - Agile Delivery Professional',
+    title: 'Shreyas Gupta | Agile Delivery Professional & Scrum Master',
     description:
-      'Portfolio of Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years of experience in Salesforce GTM systems.',
+      'Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
     url: 'https://shreyasgupta.co.in',
     siteName: 'Shreyas Gupta',
     images: [{ url: 'https://shreyasgupta.co.in/profile.jpg', width: 600, height: 600, alt: 'Shreyas Gupta' }],
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shreyas Gupta - Agile Delivery Professional',
+    title: 'Shreyas Gupta | Agile Delivery Professional & Scrum Master',
     description:
-      'Portfolio of Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years of experience in Salesforce GTM systems.',
+      'Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
     images: ['https://shreyasgupta.co.in/profile.jpg'],
   },
 };
@@ -48,9 +48,9 @@ export default function RootLayout({
         '@type': 'Person',
         '@id': 'https://shreyasgupta.co.in/#person',
         name: 'Shreyas Gupta',
-        jobTitle: 'Agile Delivery Professional',
+        jobTitle: 'Delivery Lead',
         description:
-          'Agile Delivery Professional and Scrum Master with 5+ years of experience in Salesforce GTM systems.',
+          'Delivery Lead and Scrum Master with 5+ years owning Agile delivery across Salesforce GTM systems.',
         url: 'https://shreyasgupta.co.in',
         image: 'https://shreyasgupta.co.in/profile.jpg',
         email: 'work@shreyasgupta.co.in',

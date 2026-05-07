@@ -38,12 +38,13 @@ export default function About() {
     {
       label: 'Delivery & Agile Leadership',
       skills: [
-        'Agile Delivery & Execution',
+        'Delivery Leadership & Ownership',
         'Scrum Master',
         'Release Planning & Delivery Accountability',
-        'Sprint Planning & Backlog Grooming',
+        'Sprint Planning & Roadmap Management',
         'Cross-Team Coordination & Stakeholder Alignment',
-        'Requirement Understanding & Validation',
+        'Risk Management & Dependency Resolution',
+        'Program & Portfolio Delivery',
       ],
     },
     {
@@ -58,19 +59,25 @@ export default function About() {
       ],
     },
     {
-      label: 'Quality & Automation',
+      label: 'Automation Architecture & Quality',
       skills: [
-        'Test Automation Strategy & Framework Design',
+        'Automation Strategy & Architecture',
+        'Framework Design & Ownership',
+        'Playwright (POC Lead)',
+        'Selenium Java',
         'Regression & Release Validation',
         'Quality Risk Identification',
+        'CI/CD Integration',
       ],
     },
     {
       label: 'Tools & AI',
       skills: [
         'JIRA & Azure DevOps',
-        'Generative AI & Agentic Systems',
-        'Automation Tools (Provar, VS Code)',
+        'AI Agents (ChatGPT, Copilot)',
+        'Python Scripting & Tooling',
+        'Provar & VS Code',
+        'TestRail',
       ],
     },
   ];
@@ -84,24 +91,28 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
-              I'm an Agile Delivery professional and Scrum Master with 5 years of experience across Salesforce and GTM systems,
-              focused on driving reliable and scalable execution for customer-facing teams.
+              I'm a Scrum Master and Agile Delivery Professional with five years working in Salesforce GTM systems.
+              My background is a bit unusual — I've always stayed close to the technical work, so I can have real
+              conversations with engineering teams rather than just relay information between them.
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
-              At UKG, I drive Salesforce-led GTM initiatives for Sales Enablement and Opportunity Management.
-              I work closely with Product, Engineering, and business stakeholders to plan delivery, manage backlogs, and keep releases predictable.
-              When requirements are unclear, I help shape them into clear, outcome-driven user stories that teams can execute with confidence.
+              At UKG, I run delivery for the GTM team as Scrum Master — sprints, backlog, stakeholder alignment, the works.
+              When requirements are unclear, I'm usually the one sitting with engineering to figure out what's actually
+              feasible before we commit to anything. It saves a lot of mid-sprint surprises.
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
-              I operate at the intersection of planning and execution, managing dependencies, identifying risks early,
-              and coordinating across teams to ensure customer-facing commitments are consistently met.
+              I also own our automation approach for GTM — not just running tests, but deciding what's worth automating,
+              when, and building the frameworks the team uses. It started informally and has grown into a defined
+              responsibility over time.
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
-              I also use automation as part of the delivery strategy to improve release confidence, reduce execution risk,
-              and enable faster, stable deployments.
+              I tend to pick up problems the team hasn't gotten to yet. I built AI agents in ChatGPT and Copilot to cut down
+              repetitive work, wrote a Python script to migrate our full test suite from TestRail to Azure DevOps, and I'm
+              currently leading a Playwright POC to see if it's a better fit than our current framework.
             </p>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              I'm building towards delivery and program management roles where I can own end-to-end execution and scale Salesforce GTM systems effectively.
+              I'm working towards Delivery Manager and Program Lead roles. The mix of technical background and delivery
+              ownership feels like a natural fit — in many ways I'm already doing parts of that job.
             </p>
             <div className="space-y-5">
               <h3 className="font-semibold text-cyan-400 text-lg">Core Competencies</h3>
