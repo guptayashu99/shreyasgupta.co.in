@@ -300,11 +300,11 @@ export default function ResumePrint() {
             <p>
               Scrum Master and Agile Delivery Professional with 5+ years working in Salesforce GTM systems. Currently at UKG,
               running delivery for the GTM team while staying hands-on across the full lifecycle: requirements, solutioning,
-              automation strategy, and release. Own the GTM automation approach end-to-end, deciding what gets automated and
-              building the frameworks the team works from. Background spans Selenium Java, Playwright (POC lead), AI agents
-              (ChatGPT, Copilot), and Python tooling. The combination of technical depth and delivery ownership is what makes
-              engineering conversations productive and sprint commitments realistic. Working towards Delivery Manager and
-              Program Lead roles.
+              automation strategy, and release. Prior to the Scrum Master role, served as Automation Architect for the GTM
+              space, deciding what gets automated, in what order, and building the frameworks the team works from. Background
+              spans Selenium Java, Playwright (POC lead), AI agents (ChatGPT, Copilot), and Python tooling. The combination
+              of technical depth and delivery ownership is what makes engineering conversations productive and sprint
+              commitments realistic. Working towards Delivery Manager and Program Lead roles.
             </p>
           </section>
 
