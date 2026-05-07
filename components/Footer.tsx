@@ -77,10 +77,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>
-            © {currentYear} Shreyas Gupta. All rights reserved.{' '}
-            <a href="https://github.com/guptayashu99/shreyasgupta.co.in" className="text-blue-400 hover:text-blue-300">
-              View on GitHub
-            </a>
+            © {currentYear} Shreyas Gupta. All rights reserved.
           </p>
         </div>
       </div>
