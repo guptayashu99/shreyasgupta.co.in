@@ -55,7 +55,7 @@ export default function About() {
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
               I also own the automation approach for the GTM team. Before stepping into the Scrum Master role, I was the
-              Automation Architect for the space — deciding what gets automated, in what order, and building the frameworks
+              Automation Architect for the space, deciding what gets automated, in what order, and building the frameworks
               the team works from. That technical ownership carried forward into the delivery role.
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">

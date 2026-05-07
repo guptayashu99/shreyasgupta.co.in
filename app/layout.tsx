@@ -7,14 +7,14 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Shreyas Gupta | Agile Delivery Professional & Scrum Master',
   description:
-    'Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
+    'Shreyas Gupta, Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
   alternates: {
     canonical: 'https://shreyasgupta.co.in',
   },
   openGraph: {
     title: 'Shreyas Gupta | Agile Delivery Professional & Scrum Master',
     description:
-      'Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
+      'Shreyas Gupta, Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
     url: 'https://shreyasgupta.co.in',
     siteName: 'Shreyas Gupta',
     images: [{ url: 'https://shreyasgupta.co.in/profile.jpg', width: 600, height: 600, alt: 'Shreyas Gupta' }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shreyas Gupta | Agile Delivery Professional & Scrum Master',
     description:
-      'Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
+      'Shreyas Gupta, Agile Delivery Professional and Scrum Master with 5+ years owning delivery, automation strategy, and AI tooling across Salesforce GTM systems.',
     images: ['https://shreyasgupta.co.in/profile.jpg'],
   },
 };
@@ -87,14 +87,14 @@ export default function RootLayout({
           },
           {
             '@type': 'Role',
-            roleName: 'IT Engineer — Agile & Automation',
+            roleName: 'IT Engineer, Agile & Automation',
             startDate: '2024-12',
             endDate: '2025-12',
             worksFor: { '@type': 'Organization', name: 'UKG' },
           },
           {
             '@type': 'Role',
-            roleName: 'Software Engineer — QA & Salesforce',
+            roleName: 'Software Engineer, QA & Salesforce',
             startDate: '2022-02',
             endDate: '2024-11',
             worksFor: { '@type': 'Organization', name: 'LTIMindtree' },

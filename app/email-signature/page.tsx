@@ -109,7 +109,7 @@ export default function EmailSignature() {
       </div>
 
       <p style={{ textAlign: 'center', marginTop: '32px', fontSize: '12px', color: '#94a3b8' }}>
-        Note: The profile photo loads from shreyasgupta.co.in — make sure the site is live for it to appear in emails.
+        Note: The profile photo loads from shreyasgupta.co.in. Make sure the site is live for it to appear in emails.
       </p>
     </div>
   );

@@ -14,7 +14,7 @@ export default function Resume() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-3">View &amp; Download My Resume</h3>
             <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-              Opens the latest version — use your browser's Save as PDF to download.
+              Opens the latest version. Use your browser&apos;s Save as PDF to download.
             </p>
             <a
               href="https://shreyasgupta.co.in/resume-print"
