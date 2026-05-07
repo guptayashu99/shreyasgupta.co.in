@@ -48,10 +48,13 @@ export default function Recommendations() {
                   <p className="text-xs text-cyan-400/70 mt-1">{rec.date} · {rec.relationship}</p>
                 </div>
               </div>
-              <div className="space-y-4 border-l-2 border-cyan-500/30 pl-5">
-                {rec.text.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-gray-300 leading-relaxed">{para}</p>
-                ))}
+              <div className="relative pl-8">
+                <span className="absolute top-0 left-0 text-6xl leading-none text-cyan-500/20 font-serif select-none">&ldquo;</span>
+                <div className="space-y-4 border-l-2 border-cyan-500/40 pl-5">
+                  {rec.text.split('\n\n').map((para, i) => (
+                    <p key={i} className="text-gray-300 leading-relaxed">{para}</p>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

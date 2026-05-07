@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Shreyas Gupta - Agile Delivery Professional',
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
       'Portfolio of Shreyas Gupta — Agile Delivery Professional and Scrum Master with 5+ years of experience in Salesforce GTM systems.',
     url: 'https://shreyasgupta.co.in',
     siteName: 'Shreyas Gupta',
-    images: [{ url: '/profile.jpg', width: 800, height: 800, alt: 'Shreyas Gupta' }],
+    images: [{ url: '/profile.jpg', width: 600, height: 600, alt: 'Shreyas Gupta' }],
     type: 'website',
   },
   twitter: {
@@ -36,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }

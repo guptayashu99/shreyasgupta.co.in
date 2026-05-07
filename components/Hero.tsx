@@ -42,7 +42,25 @@ export default function Hero() {
                 Delhi, India
               </span>
             </div>
-            <div className="flex gap-4 mt-5 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
+              <a
+                href="/resume.pdf"
+                download="Shreyas_Gupta_Resume.pdf"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-[#0a0e27] font-semibold transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Download Resume
+              </a>
+              <a
+                href="#experience"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-cyan-500/50 hover:border-cyan-400 text-cyan-400 font-semibold transition-colors"
+              >
+                View My Work
+              </a>
+            </div>
+            <div className="flex gap-4 mt-4 justify-center md:justify-start">
               <a
                 href="https://www.linkedin.com/in/shreyasgupta99/"
                 target="_blank"

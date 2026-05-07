@@ -1,5 +1,38 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
+
+function CountUp({ to, suffix = '' }: { to: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setStarted(true); },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    let startTime = 0;
+    const duration = 1500;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * to));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [started, to]);
+
+  return <div ref={ref}>{count}{suffix}</div>;
+}
+
 export default function About() {
   const skillGroups = [
     {
@@ -89,17 +122,23 @@ export default function About() {
           <div className="card-dark p-8">
             <div className="space-y-6">
               <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">5</div>
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
+                  <CountUp to={5} suffix="+" />
+                </div>
                 <p className="text-gray-400 mt-2">Years of Experience</p>
               </div>
               <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
               <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">6</div>
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
+                  <CountUp to={6} />
+                </div>
                 <p className="text-gray-400 mt-2">Salesforce Certifications</p>
               </div>
               <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
               <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">2</div>
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
+                  <CountUp to={2} />
+                </div>
                 <p className="text-gray-400 mt-2">Scrum Certifications</p>
               </div>
               <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>

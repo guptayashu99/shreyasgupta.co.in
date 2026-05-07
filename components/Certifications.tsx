@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 
@@ -10,6 +10,7 @@ interface Certification {
   expires?: string;
   credentialId: string;
   badgeFile: string;
+  verifyUrl: string;
 }
 
 function CertBadge({ file, title }: { file: string; title: string }) {
@@ -38,6 +39,9 @@ function CertBadge({ file, title }: { file: string; title: string }) {
   );
 }
 
+const SF_VERIFY = 'https://trailhead.salesforce.com/credentials/verification';
+const SA_VERIFY = 'https://www.scrumalliance.org/community/profile/shreyasgupta';
+
 export default function Certifications() {
   const certifications: Certification[] = [
     {
@@ -47,6 +51,7 @@ export default function Certifications() {
       issued: 'Feb 2026',
       credentialId: '7450870',
       badgeFile: 'Salesforce Certified Sales Cloud Consultant.png',
+      verifyUrl: SF_VERIFY,
     },
     {
       id: '2',
@@ -56,6 +61,7 @@ export default function Certifications() {
       expires: 'Sep 2027',
       credentialId: '001726206',
       badgeFile: 'Scrum Master Certified (SMC).png',
+      verifyUrl: SA_VERIFY,
     },
     {
       id: '3',
@@ -64,6 +70,7 @@ export default function Certifications() {
       issued: 'Jul 2025',
       credentialId: '6328042',
       badgeFile: 'Salesforce Certified Platform App Builder.png',
+      verifyUrl: SF_VERIFY,
     },
     {
       id: '4',
@@ -73,6 +80,7 @@ export default function Certifications() {
       expires: 'Sep 2027',
       credentialId: '001726206',
       badgeFile: 'Certified Scrum Product Owner (CSPO).png',
+      verifyUrl: SA_VERIFY,
     },
     {
       id: '5',
@@ -81,6 +89,7 @@ export default function Certifications() {
       issued: 'Dec 2024',
       credentialId: '5475811',
       badgeFile: 'Salesforce Certified Agentforce Specialist.png',
+      verifyUrl: SF_VERIFY,
     },
     {
       id: '6',
@@ -89,6 +98,7 @@ export default function Certifications() {
       issued: 'Sep 2024',
       credentialId: '4827368',
       badgeFile: 'Salesforce Certified Platform Developer.png',
+      verifyUrl: SF_VERIFY,
     },
     {
       id: '7',
@@ -97,6 +107,7 @@ export default function Certifications() {
       issued: 'Feb 2024',
       credentialId: '4104030',
       badgeFile: 'Salesforce Certified Platform Foundations.png',
+      verifyUrl: SF_VERIFY,
     },
     {
       id: '8',
@@ -105,6 +116,7 @@ export default function Certifications() {
       issued: 'Sep 2022',
       credentialId: '2604496',
       badgeFile: 'Salesforce Certified Platform Administrator.png',
+      verifyUrl: SF_VERIFY,
     },
   ];
 
@@ -138,9 +150,19 @@ export default function Certifications() {
                       <span className="font-medium text-gray-300">{cert.expires}</span>
                     </div>
                   )}
-                  <div className="flex justify-between pt-2 border-t border-[#2a3050]">
-                    <span>Credential ID:</span>
+                  <div className="flex justify-between items-center pt-2 border-t border-[#2a3050]">
                     <span className="font-mono text-xs text-cyan-400/70">{cert.credentialId}</span>
+                    <a
+                      href={cert.verifyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-cyan-400 hover:text-cyan-300 font-medium transition-colors flex items-center gap-1"
+                    >
+                      Verify
+                      <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -151,4 +173,3 @@ export default function Certifications() {
     </section>
   );
 }
-

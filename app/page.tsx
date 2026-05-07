@@ -9,10 +9,12 @@ import Resume from '@/components/Resume';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
 import FadeIn from '@/components/FadeIn';
+import ProgressBar from '@/components/ProgressBar';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <ProgressBar />
       <Header />
       <Hero />
       <FadeIn><About /></FadeIn>
