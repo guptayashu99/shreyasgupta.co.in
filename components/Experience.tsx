@@ -92,12 +92,14 @@ export default function Experience() {
               <div className="card-dark p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center p-1 shadow-sm">
+                    <div className="flex-shrink-0">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`/company-logos/${exp.logoFile}`}
                         alt={`${exp.company} logo`}
-                        className="w-full h-full object-contain"
+                        width={72}
+                        height={72}
+                        className="object-contain"
                       />
                     </div>
                     <div>

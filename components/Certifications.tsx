@@ -21,8 +21,8 @@ function CertBadge({ file, title }: { file: string; title: string }) {
       <img
         src={`/certification-badges/${file}`}
         alt={`${title} badge`}
-        width={48}
-        height={48}
+        width={72}
+        height={72}
         className="object-contain"
         onError={() => setFailed(true)}
       />
@@ -30,9 +30,11 @@ function CertBadge({ file, title }: { file: string; title: string }) {
   }
 
   return (
-    <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
+    <div className="w-[72px] h-[72px] rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center">
+      <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
   );
 }
 
@@ -116,8 +118,8 @@ export default function Certifications() {
           <div className="grid md:grid-cols-2 gap-6">
             {certifications.map((cert) => (
               <div key={cert.id} className="card-dark p-6">
-                <div className="flex items-start space-x-3 mb-3">
-                  <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600">
+                <div className="flex items-start space-x-4 mb-3">
+                  <div className="flex-shrink-0">
                     <CertBadge file={cert.badgeFile} title={cert.title} />
                   </div>
                   <div className="flex-1">
