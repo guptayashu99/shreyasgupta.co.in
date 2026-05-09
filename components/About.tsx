@@ -46,7 +46,9 @@ export default function About() {
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
               I&apos;m a Scrum Master and Agile Delivery Professional with five years working in Salesforce GTM systems.
               My background is a bit unusual. I&apos;ve always stayed close to the technical work, so I can have real
-              conversations with engineering teams rather than just relay information between them.
+              conversations with engineering teams rather than just relay information between them. That includes writing
+              Apex, working through data model decisions with developers, and being in solutioning conversations early
+              rather than just reviewing stories at sprint start.
             </p>
             <p className="text-lg text-gray-300 mb-5 leading-relaxed">
               At UKG, I run delivery for the GTM team as Scrum Master: sprints, backlog, stakeholder alignment, the works.

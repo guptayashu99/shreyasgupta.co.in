@@ -16,10 +16,10 @@ export default function Hero() {
               Agile Delivery Professional | Scrum Master
             </p>
             <p className="text-xl text-gray-300 mb-6">
-              Salesforce GTM Systems | Delivery Ownership · Automation Strategy · AI Tooling
+              Salesforce GTM Systems | Delivery Ownership · Apex Development · Automation Strategy · AI Tooling
             </p>
             <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
-              Scrum Master for a Salesforce GTM team at UKG, with a hands-on background in automation architecture, requirements, and AI tooling. Five years in GTM delivery.
+              Scrum Master for a Salesforce GTM team at UKG, with a hands-on background in Apex development, automation architecture, and AI tooling. Five years in GTM delivery.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6 justify-center md:justify-start text-sm text-gray-400">
               <a href="mailto:work@shreyasgupta.co.in" className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
