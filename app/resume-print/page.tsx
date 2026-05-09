@@ -7,7 +7,7 @@ const css = `
 
   body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10pt;
+    font-size: 9pt;
     color: #1a1a1a;
     background: #e5e7eb;
   }
@@ -34,7 +34,6 @@ const css = `
     .resume { box-shadow: none !important; margin: 0 !important; max-width: 100% !important; }
     @page { size: A4; margin: 7mm 11mm; }
     .job { page-break-inside: avoid; }
-    .bottom-grid { page-break-inside: avoid; }
   }
 
   .resume {
@@ -58,18 +57,18 @@ const css = `
   .header-info { flex: 1; }
 
   .header-info h1 {
-    font-size: 22pt;
+    font-size: 19pt;
     font-weight: 700;
     letter-spacing: -0.3px;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 
   .header-title {
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: #22d3ee;
     font-weight: 600;
-    margin-bottom: 10px;
-    line-height: 1.4;
+    margin-bottom: 6px;
+    line-height: 1.35;
   }
 
   .contact-row {
@@ -145,7 +144,7 @@ const css = `
   }
 
   .job h3 {
-    font-size: 10pt;
+    font-size: 9.5pt;
     font-weight: 700;
     color: #0f172a;
   }
@@ -178,10 +177,10 @@ const css = `
   }
 
   .job-desc {
-    font-size: 8.5pt;
+    font-size: 8pt;
     color: #4b5563;
     font-style: italic;
-    margin: 4px 0;
+    margin: 2px 0;
   }
 
   .job ul {
