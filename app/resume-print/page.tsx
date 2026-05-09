@@ -32,7 +32,7 @@ const css = `
     .print-btn { display: none !important; }
     body { background: white; }
     .resume { box-shadow: none !important; margin: 0 !important; max-width: 100% !important; }
-    @page { size: A4; margin: 10mm 14mm; }
+    @page { size: A4; margin: 7mm 11mm; }
     .job { page-break-inside: avoid; }
     .bottom-grid { page-break-inside: avoid; }
   }
@@ -48,11 +48,11 @@ const css = `
   .header {
     background: #0f172a;
     color: white;
-    padding: 22px 26px;
+    padding: 16px 22px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
 
   .header-info { flex: 1; }
@@ -81,8 +81,8 @@ const css = `
   }
 
   .photo {
-    width: 84px;
-    height: 84px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
@@ -91,9 +91,9 @@ const css = `
   }
 
   /* ── Body ── */
-  .body { padding: 18px 26px; }
+  .body { padding: 12px 22px; }
 
-  section { margin-bottom: 14px; }
+  section { margin-bottom: 10px; }
 
   h2 {
     font-size: 8.5pt;
@@ -102,14 +102,14 @@ const css = `
     letter-spacing: 1.2px;
     color: #0f172a;
     border-bottom: 1.5px solid #22d3ee;
-    padding-bottom: 3px;
-    margin-bottom: 8px;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
   }
 
   /* ── Summary ── */
   .summary p {
     font-size: 9pt;
-    line-height: 1.55;
+    line-height: 1.45;
     color: #374151;
   }
 
@@ -117,7 +117,7 @@ const css = `
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 7px 24px;
+    gap: 4px 20px;
   }
 
   .skill-group strong {
@@ -134,7 +134,7 @@ const css = `
   }
 
   /* ── Experience ── */
-  .job { margin-bottom: 11px; }
+  .job { margin-bottom: 8px; }
 
   .job-header {
     display: flex;
@@ -192,8 +192,8 @@ const css = `
   .job ul li {
     font-size: 8.5pt;
     color: #374151;
-    line-height: 1.45;
-    margin-bottom: 3px;
+    line-height: 1.38;
+    margin-bottom: 2px;
     padding-left: 14px;
     position: relative;
   }
@@ -211,12 +211,12 @@ const css = `
   .bottom-grid {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
-    gap: 20px;
+    gap: 14px;
     margin-bottom: 0;
   }
 
   /* ── Certifications ── */
-  .cert-item { margin-bottom: 5px; }
+  .cert-item { margin-bottom: 3px; }
 
   .cert-name {
     font-size: 8.5pt;
@@ -231,7 +231,7 @@ const css = `
   }
 
   /* ── Education ── */
-  .edu-item { margin-bottom: 7px; }
+  .edu-item { margin-bottom: 5px; }
 
   .edu-degree {
     font-size: 8.5pt;
