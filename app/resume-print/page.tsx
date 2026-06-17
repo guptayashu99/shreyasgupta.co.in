@@ -328,7 +328,7 @@ export default function ResumePrint() {
                 <div className="job-header">
                   <div>
                     <h3>{exp.title}</h3>
-                    <p className="job-company">{exp.companyFull}</p>
+                    <p className="job-company">{exp.company}</p>
                     <p className="job-location">{exp.location}</p>
                   </div>
                   <div>
@@ -352,7 +352,7 @@ export default function ResumePrint() {
                 <div key={cert.id} className="cert-item">
                   <div className="cert-name">{cert.name}</div>
                   <div className="cert-meta">
-                    {cert.issuer} · Issued {cert.issued}{cert.expires ? ` · Expires ${cert.expires}` : ''} · ID: {cert.credentialId}
+                    {cert.issuer} · Issued {cert.issued}
                   </div>
                 </div>
               ))}

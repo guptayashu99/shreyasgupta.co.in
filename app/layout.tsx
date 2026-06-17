@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Hanken_Grotesk, JetBrains_Mono } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'Shreyas Gupta | Agile Delivery Professional & Scrum Master',
@@ -30,10 +28,13 @@ export const metadata: Metadata = {
   },
 };
 
+const hankenGrotesk = Hanken_Grotesk({ subsets: ['latin'], variable: '--font-hanken' });
+const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#0a0e27',
+  themeColor: '#0B0C10',
 };
 
 export default function RootLayout({
@@ -128,14 +129,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${hankenGrotesk.variable} ${jetBrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body style={{ overflow: 'clip' }}>{children}</body>
     </html>
   );
 }

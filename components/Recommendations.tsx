@@ -1,59 +1,66 @@
 'use client';
 
-interface Recommendation {
-  id: string;
-  name: string;
-  title: string;
-  relationship: string;
-  date: string;
-  text: string;
-}
+import { recommendations } from '@/lib/data';
 
 export default function Recommendations() {
-  const recommendations: Recommendation[] = [
-    {
-      id: '1',
-      name: 'Swati Banerjee',
-      title: 'Enterprise Salesforce Leader | Distribution Technology Strategy | Platform Governance & Digital Transformation | Financial Services',
-      relationship: 'Managed Shreyas directly · Lincoln Financial',
-      date: 'December 2024',
-      text: "I had the pleasure of working closely with Shreyas during his time at LTI Mindtree, supporting Lincoln Financial. As a Quality Engineer with exceptional Selenium expertise, Shreyas consistently demonstrated a deep understanding of Seismic's and Salesforce's complex ecosystems, ensuring their stability through comprehensive automated and manual testing.\n\nShreyas' ability to design and implement robust Selenium test frameworks, coupled with his keen attention to detail and drive to exceed expectations, significantly improved our development cycle. His efforts reduced regression testing time and enhanced overall application quality. He was proactive in identifying potential issues early, offering practical solutions, and collaborating seamlessly with developers, admins, and other stakeholders.\n\nBeyond his technical skills, Shreyas is a true team player. He willingly shares knowledge, mentors team members, and fosters a culture of continuous improvement. His commitment to quality, sharp problem-solving skills, and unwavering dedication make him an invaluable asset to any organization.\n\nI highly recommend Shreyas to any team seeking a QA expert with strong proficiency in Seismic, Salesforce, and Selenium automation. His contributions will undoubtedly elevate quality and efficiency in any Salesforce implementation.",
-    },
-    {
-      id: '2',
-      name: 'Kathi-Lyn Coker',
-      title: 'VP, Marketing and Sales Technology Enablement @ Lincoln Financial | Driving Sales Team Efficiencies',
-      relationship: 'Senior to Shreyas · Lincoln Financial',
-      date: 'November 2024',
-      text: 'I had the privilege of working with Shreyas for three years, during which he consistently took ownership of his projects and went above and beyond his role. He mastered our products, meticulously documented processes, and provided valuable business insights. More than just a fantastic tester, Shreyas was a true business partner whose dedication and strategic input elevated our team\'s success.',
-    },
-  ];
-
   return (
-    <section id="recommendations" className="section-padding bg-[#0a0e27] border-t border-[#2a3050]">
-      <div className="container-custom">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-          <span className="text-cyan-400">Recommendations</span>
+    <section id="recommendations" className="bg-bg-band border-t border-border-subtle">
+      <div className="container-content section-padding">
+        {/* Section label */}
+        <div data-reveal className="flex items-center gap-3.5 mb-5.5">
+          <span className="font-mono text-xs font-semibold tracking-widest text-accent-lt">[ 05 ]</span>
+          <span className="font-mono text-xs font-medium tracking-[0.18em] uppercase text-text whitespace-nowrap">In their words</span>
+          <span className="flex-1 h-px bg-border"></span>
+          <span className="font-mono text-[11px] tracking-wider text-text-faint">05_06</span>
+        </div>
+
+        {/* Heading */}
+        <h2 data-reveal className="font-display font-black text-h2-section leading-tight -tracking-wider mb-[clamp(44px,5vw,68px)] text-text-hi">
+          What leaders I&apos;ve worked with say<span className="text-accent-lt">.</span>
         </h2>
-        <div className="max-w-4xl mx-auto space-y-8">
+
+        {/* Recommendations */}
+        <div className="flex flex-col gap-4.5">
           {recommendations.map((rec) => (
-            <div key={rec.id} className="card-dark p-8">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center text-white font-bold text-lg">
-                  {rec.name.charAt(0)}
-                </div>
+            <div
+              key={rec.id}
+              data-reveal
+              className="bg-surface border border-border rounded-[14px] p-[clamp(28px,3.4vw,46px)]"
+            >
+              <div className="grid md:grid-cols-[260px_1fr] gap-[clamp(28px,4vw,60px)]">
+                {/* Left: Author info */}
                 <div>
-                  <h3 className="text-lg font-semibold text-white">{rec.name}</h3>
-                  <p className="text-sm text-gray-400 leading-snug mt-0.5">{rec.title}</p>
-                  <p className="text-xs text-cyan-400/70 mt-1">{rec.date} · {rec.relationship}</p>
+                  <div className="flex items-center gap-3.5 mb-4.5">
+                    <div className="flex-shrink-0 w-[46px] h-[46px] rounded-full bg-accent flex items-center justify-center font-display font-bold text-2xl text-bg">
+                      {rec.initial}
+                    </div>
+                    <p className="font-display text-lg font-bold text-text-hi leading-[1.2]">
+                      {rec.name}
+                    </p>
+                  </div>
+                  <p className="text-xs text-text-dim leading-[1.5]">
+                    {rec.title}
+                  </p>
+                  <p className="font-mono text-[11px] text-accent-lt mt-3.5 tracking-widest leading-[1.5]">
+                    {rec.meta}
+                  </p>
                 </div>
-              </div>
-              <div className="relative pl-8">
-                <span className="absolute top-0 left-0 text-6xl leading-none text-cyan-500/20 font-serif select-none">&ldquo;</span>
-                <div className="space-y-4 border-l-2 border-cyan-500/40 pl-5">
-                  {rec.text.split('\n\n').map((para, i) => (
-                    <p key={i} className="text-gray-300 leading-relaxed">{para}</p>
-                  ))}
+
+                {/* Right: Testimonial */}
+                <div>
+                  <div className="font-mono text-[11px] font-semibold tracking-[0.14em] text-accent-lt mb-4.5">
+                    // RECOMMENDATION
+                  </div>
+                  <div className="space-y-3.5">
+                    {rec.paras.map((para, i) => (
+                      <p
+                        key={i}
+                        className="text-rec-body leading-[1.7] text-text-body-2"
+                      >
+                        {para}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
