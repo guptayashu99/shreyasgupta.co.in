@@ -24,7 +24,7 @@ export default function WeddingInvitePage() {
             </div>
             <p className="font-mono text-[11px] font-medium uppercase tracking-[0.28em] text-[#f5d77a]">Wedding Invitation</p>
             <h1 className="mt-5 bg-gradient-to-r from-[#f9e6b1] via-[#d8b96d] to-[#f3d479] bg-clip-text font-display text-[clamp(38px,7vw,72px)] font-black leading-[0.96] tracking-[-0.06em] text-transparent">
-              Join Shreyas &amp; Amisha for a celebration of love.
+              Join Amisha &amp; Shreyas for a celebration of love.
             </h1>
             <p className="mt-5 max-w-2xl text-base text-[#f1d7a0] md:text-lg">
               11–12 March 2026 · Two days of family, music, blessings, and togetherness.
