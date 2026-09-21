@@ -9,7 +9,7 @@ export default function WeddingPage() {
             <img src="/company-logos/Wedding_Logo.png" alt="Wedding logo" className="h-64 w-64 rounded-full border border-[#f4d68a]/60 bg-[#2a0b12]/60 object-cover p-3 shadow-[0_0_45px_rgba(244,214,138,0.28)] md:h-80 md:w-80" />
           </div>
           <p className="mt-8 font-mono text-[11px] font-medium uppercase tracking-[0.28em] text-[#f5d77a]">Wedding Celebration</p>
-          <h1 className="mt-6 bg-gradient-to-r from-[#f9e6b1] via-[#d8b96d] to-[#f3d479] bg-clip-text font-display text-[clamp(40px,7vw,72px)] font-black leading-[0.96] tracking-[-0.06em] text-transparent">
+          <h1 className="mt-6 bg-gradient-to-r from-[#f9e6b1] via-[#d8b96d] to-[#f3d479] bg-clip-text font-display text-[clamp(40px,7vw,72px)] font-black leading-[1.08] tracking-[-0.06em] text-transparent">
             Amisha &amp; Shreyas
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-[#f1d7a0] md:text-lg">
