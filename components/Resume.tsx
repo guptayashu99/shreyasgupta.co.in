@@ -1,38 +1,33 @@
 export default function Resume() {
   return (
-    <section id="resume" className="bg-bg">
-      <div className="container-content section-padding-resume text-center">
-        {/* Eyebrow */}
-        <p data-reveal className="font-mono text-xs font-medium tracking-[0.16em] uppercase text-accent mb-6">
-          [ 06 ] · Resume / CV
-        </p>
-
-        {/* Heading */}
-        <h2 data-reveal className="font-display font-black text-h2-resume leading-tight -tracking-wider max-w-[18ch] mx-auto mb-7 text-text-hi">
-          The full story, on one page.
+    <section id="resume" className="section-padding bg-[#0d1235] border-t border-[#2a3050]">
+      <div className="container-custom">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+          Resume & <span className="text-cyan-400">CV</span>
         </h2>
-
-        {/* Subheading */}
-        <p data-reveal className="text-[clamp(16px,1.7vw,18px)] text-text-soft max-w-[46ch] mx-auto leading-[1.55] mb-9.5">
-          The latest version, always current. Open it and use your browser&apos;s Save as PDF to download.
-        </p>
-
-        {/* Buttons */}
-        <div data-reveal className="flex flex-wrap gap-3.25 justify-center">
-          <a
-            href="https://shreyasgupta.co.in/resume-print"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            View Resume (PDF)
-            <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-            </svg>
-          </a>
-          <a href="mailto:work@shreyasgupta.co.in" className="btn-secondary">
-            Get in touch
-          </a>
+        <div className="max-w-2xl mx-auto">
+          <div className="card-dark p-8 md:p-12 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full mb-6">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3">View &amp; Download My Resume</h3>
+            <p className="text-gray-300 mb-8 max-w-xl mx-auto">
+              Opens the latest version. Use your browser&apos;s Save as PDF to download.
+            </p>
+            <a
+              href="https://shreyasgupta.co.in/resume-print"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 btn-primary"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>View Resume (PDF)</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

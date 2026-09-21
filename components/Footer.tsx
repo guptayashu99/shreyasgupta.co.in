@@ -1,70 +1,89 @@
+'use client';
+
+import Logo from '@/components/Logo';
+
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-bg-footer border-t border-border-subtle text-text-muted">
-      <div className="container-content py-[clamp(56px,7vw,84px)] pb-[clamp(32px,4vw,44px)]">
-        {/* Main footer grid */}
-        <div className="grid md:grid-cols-[1.6fr_1fr_1fr] gap-10 mb-[clamp(40px,5vw,60px)]">
-          {/* Brand column */}
+    <footer className="bg-gray-900 text-white">
+      <div className="container-custom py-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-8">
           <div>
-            <a href="#home" className="inline-flex items-center gap-2.75 mb-4.5">
-              <svg width="32" height="32" viewBox="0 0 100 100" className="block">
-                <polygon points="50,4 87,26 87,74 50,96 13,74 13,26" fill="#E2623C"/>
-                <text
-                  x="50"
-                  y="50"
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontFamily="'Hanken Grotesk', sans-serif"
-                  fontWeight="800"
-                  fontSize="34"
-                  letterSpacing="-1.5"
-                  fill="#0B0C10"
-                >
-                  SG
-                </text>
-              </svg>
-              <span className="font-display text-base font-bold text-text">Shreyas Gupta</span>
-            </a>
-            <p className="text-sm leading-1.6 max-w-[38ch] text-text-dim">
-              Agile delivery professional and Scrum Master for Salesforce GTM systems — owning execution, automation, and the technical conversations in between.
+            <div className="flex items-center gap-3 mb-4">
+              <Logo size={40} />
+              <h3 className="text-xl font-bold">Shreyas <span className="text-cyan-400">Gupta</span></h3>
+            </div>
+            <p className="text-gray-400">
+              Agile Delivery Professional | Scrum Master | Salesforce GTM Systems.
+              Driving cross-functional execution and automation for reliable, scalable outcomes.
             </p>
           </div>
-
-          {/* Navigate column */}
           <div>
-            <p className="font-mono text-[11px] font-semibold tracking-widest uppercase text-text-faint mb-4">Navigate</p>
-            <div className="flex flex-col gap-2.75">
-              <a href="#about" className="text-sm transition-colors duration-200 hover:text-text">About</a>
-              <a href="#experience" className="text-sm transition-colors duration-200 hover:text-text">Experience</a>
-              <a href="#certifications" className="text-sm transition-colors duration-200 hover:text-text">Certifications</a>
-              <a href="#recommendations" className="text-sm transition-colors duration-200 hover:text-text">Recommendations</a>
-            </div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="#experience" className="hover:text-white transition-colors">Experience</a></li>
+              <li><a href="#certifications" className="hover:text-white transition-colors">Certifications</a></li>
+              <li><a href="#education" className="hover:text-white transition-colors">Education</a></li>
+              <li><a href="#recommendations" className="hover:text-white transition-colors">Recommendations</a></li>
+              <li><a href="#resume" className="hover:text-white transition-colors">Resume</a></li>
+            </ul>
           </div>
-
-          {/* Connect column */}
           <div>
-            <p className="font-mono text-[11px] font-semibold tracking-widest uppercase text-text-faint mb-4">Connect</p>
-            <div className="flex flex-col gap-2.75">
-              <a href="mailto:work@shreyasgupta.co.in" className="text-sm transition-colors duration-200 hover:text-accent-lt">
-                work@shreyasgupta.co.in
-              </a>
-              <a href="tel:+919560483058" className="text-sm transition-colors duration-200 hover:text-accent-lt">
-                +91 95604 83058
-              </a>
-              <a href="https://www.linkedin.com/in/shreyasgupta99/" target="_blank" rel="noopener" className="text-sm transition-colors duration-200 hover:text-accent-lt">
-                LinkedIn ↗
-              </a>
-              <a href="https://www.salesforce.com/trailblazer/shreyasgupta" target="_blank" rel="noopener" className="text-sm transition-colors duration-200 hover:text-accent-lt">
-                Trailblazer ↗
-              </a>
+            <h4 className="text-lg font-semibold mb-4">Connect</h4>
+            <div className="space-y-3 text-gray-400">
+              <p>
+                <span className="font-semibold text-white">Email:</span>
+                <br />
+                <a href="mailto:work@shreyasgupta.co.in" className="text-blue-400 hover:text-blue-300">
+                  work@shreyasgupta.co.in
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-white">Phone:</span>
+                <br />
+                <a href="tel:+919560483058" className="text-blue-400 hover:text-blue-300">
+                  +91 9560483058
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-white">Location:</span>
+                <br />
+                <span>Delhi, India</span>
+              </p>
+              <div className="pt-2 border-t border-gray-700 mt-4">
+                <p className="font-semibold text-white mb-2">Follow</p>
+                <div className="flex space-x-3">
+                  <a
+                    href="https://www.linkedin.com/in/shreyasgupta99/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                    title="LinkedIn"
+                  >
+                    LinkedIn
+                  </a>
+                  <span className="text-gray-600">•</span>
+                  <a
+                    href="https://www.salesforce.com/trailblazer/shreyasgupta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                    title="Salesforce Trailblazer"
+                  >
+                    Trailblazer
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div className="border-t border-border-subtle pt-6.5 flex flex-wrap gap-3 justify-between items-center">
-          <p className="font-mono text-[11.5px] text-text-faint">© 2026 Shreyas Gupta — Delhi, India</p>
-          <p className="font-mono text-[11.5px] text-text-faint">shreyasgupta.co.in</p>
+        <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
+          <p>
+            © {currentYear} Shreyas Gupta. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

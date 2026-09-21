@@ -3,119 +3,116 @@
 import { useState, useEffect, useRef } from 'react';
 import { skillGroups } from '@/lib/data';
 
-export default function About() {
-  const [counts, setCounts] = useState({ years: 0, sf: 0, scrum: 0 });
-  const countRef = useRef<HTMLDivElement>(null);
-  const countedRef = useRef(false);
+function CountUp({ to, suffix = '' }: { to: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (countedRef.current || !countRef.current) return;
-
-      const rect = countRef.current.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.9) {
-        countedRef.current = true;
-        const duration = 1400;
-        const start = performance.now();
-
-        const animate = (now: number) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-
-          setCounts({
-            years: Math.floor(eased * 5),
-            sf: Math.floor(eased * 6),
-            scrum: Math.floor(eased * 2),
-          });
-
-          if (progress < 1) requestAnimationFrame(animate);
-        };
-        requestAnimationFrame(animate);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setStarted(true); },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!started) return;
+    let startTime = 0;
+    const duration = 1500;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * to));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [started, to]);
+
+  return <div ref={ref}>{count}{suffix}</div>;
+}
+
+export default function About() {
   return (
-    <section id="about" className="bg-bg-band border-t border-border-subtle">
-      <div className="container-content section-padding">
-        {/* Section label */}
-        <div data-reveal className="flex items-center gap-3.5 mb-5.5">
-          <span className="font-mono text-xs font-semibold tracking-widest text-accent">[ 01 ]</span>
-          <span className="font-mono text-xs font-medium tracking-[0.18em] uppercase text-text">About</span>
-          <span className="flex-1 h-px bg-border"></span>
-          <span className="font-mono text-[11px] tracking-wider text-text-faint">01_06</span>
-        </div>
-
-        {/* Heading */}
-        <h2 data-reveal className="font-display font-black text-h2-section leading-tight -tracking-wider max-w-[18ch] mb-[clamp(40px,5vw,64px)] text-text-hi">
-          Technical enough to keep delivery <span className="text-accent">honest.</span>
+    <section id="about" className="section-padding bg-[#0a0e27] border-t border-[#2a3050]">
+      <div className="container-custom">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+          About <span className="text-cyan-400">Me</span>
         </h2>
-
-        {/* Content grid */}
-        <div className="grid md:grid-cols-[1.5fr_1fr] gap-[clamp(36px,5vw,68px)] items-start">
-          {/* Left: Body paragraphs */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <p data-reveal className="text-body leading-[1.62] text-text-body mb-5.5">
-              I&apos;m a Scrum Master and Agile delivery professional with five years in Salesforce GTM systems — and an unusually technical background for the role. I write Apex, work through data-model decisions with developers, and get into solutioning early rather than relaying stories at sprint start.
+            <p className="text-lg text-gray-300 mb-5 leading-relaxed">
+              I&apos;m a Scrum Master and Agile Delivery Professional with five years working in Salesforce GTM systems.
+              My background is a bit unusual. I&apos;ve always stayed close to the technical work, so I can have real
+              conversations with engineering teams rather than just relay information between them. That includes writing
+              Apex, working through data model decisions with developers, and being in solutioning conversations early
+              rather than just reviewing stories at sprint start.
             </p>
-            <p data-reveal className="text-body leading-[1.62] text-text-body mb-5.5">
-              At UKG I run delivery for the GTM team end to end. When requirements are fuzzy, I&apos;m the one sitting with engineering to figure out what&apos;s feasible before we commit — which saves a lot of mid-sprint surprises. I also own the team&apos;s automation approach, carried over from my time as its Automation Architect.
+            <p className="text-lg text-gray-300 mb-5 leading-relaxed">
+              At UKG, I run delivery for the GTM team as Scrum Master: sprints, backlog, stakeholder alignment, the works.
+              When requirements are unclear, I&apos;m usually the one sitting with engineering to figure out what&apos;s actually
+              feasible before we commit to anything. It saves a lot of mid-sprint surprises.
             </p>
-            <p data-reveal className="text-body leading-[1.62] text-text-body">
-              I pick up the problems no one&apos;s gotten to yet: AI agents to cut repetitive work, a Python migration of our test suite to Azure DevOps, a Playwright POC in flight. I&apos;m heading toward Delivery Manager and Program Lead — in many ways already doing the job.
+            <p className="text-lg text-gray-300 mb-5 leading-relaxed">
+              I also own the automation approach for the GTM team. Before stepping into the Scrum Master role, I was the
+              Automation Architect for the space, deciding what gets automated, in what order, and building the frameworks
+              the team works from. That technical ownership carried forward into the delivery role.
             </p>
-          </div>
-
-          {/* Right: Stats panel */}
-          <div data-reveal ref={countRef} className="bg-surface border border-border rounded-xl p-[clamp(28px,3vw,38px)]">
-            <div className="flex flex-col gap-6.5">
-              <div>
-                <div className="font-mono text-[46px] font-semibold -tracking-wider text-text-hi">{counts.years}+</div>
-                <div className="font-mono text-[11.5px] tracking-widest uppercase text-text-faint mt-2">Years in GTM delivery</div>
-              </div>
-              <div className="h-px bg-border"></div>
-              <div>
-                <div className="font-mono text-[46px] font-semibold -tracking-wider text-accent-lt">{counts.sf}</div>
-                <div className="font-mono text-[11.5px] tracking-widest uppercase text-text-faint mt-2">Salesforce certifications</div>
-              </div>
-              <div className="h-px bg-border"></div>
-              <div>
-                <div className="font-mono text-[46px] font-semibold -tracking-wider text-text-hi">{counts.scrum}</div>
-                <div className="font-mono text-[11.5px] tracking-widest uppercase text-text-faint mt-2">Scrum certifications</div>
-              </div>
-              <div className="h-px bg-border"></div>
-              <div>
-                <div className="font-display text-[22px] font-bold text-text-hi">Delhi, India</div>
-                <div className="font-mono text-[11.5px] tracking-widest uppercase text-text-faint mt-1.5">Based in · Hybrid</div>
-              </div>
+            <p className="text-lg text-gray-300 mb-5 leading-relaxed">
+              I tend to pick up problems the team hasn&apos;t gotten to yet. I built AI agents in ChatGPT and Copilot to cut down
+              repetitive work, wrote a Python script to migrate our full test suite from TestRail to Azure DevOps, and I&apos;m
+              currently leading a Playwright POC to see if it&apos;s a better fit than our current framework.
+            </p>
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              I&apos;m working towards Delivery Manager and Program Lead roles. The mix of technical background and delivery
+              ownership feels like a natural fit. In many ways I&apos;m already doing parts of that job.
+            </p>
+            <div className="space-y-5">
+              <h3 className="font-semibold text-cyan-400 text-lg">Core Competencies</h3>
+              {skillGroups.map((group) => (
+                <div key={group.label}>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">{group.label}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <span key={skill} className="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-sm font-medium border border-cyan-500/30 hover:border-cyan-400 transition-colors">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-
-        {/* Core competencies */}
-        <div className="mt-[clamp(48px,6vw,76px)]">
-          <h3 data-reveal className="font-mono text-xs font-semibold tracking-[0.14em] uppercase text-text-dim mb-6.5">Core competencies</h3>
-          <div className="grid auto-fit md:grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-7">
-            {skillGroups.map((group) => (
-              <div key={group.label} data-reveal>
-                <p className="font-mono text-[11px] font-semibold tracking-wider uppercase text-accent mb-3.5">
-                  {group.label}
-                </p>
-                <div className="flex flex-wrap gap-[7px]">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs font-medium text-[#C2C5CC] bg-surface-chip border border-[#262A32] px-3 py-1.5 rounded-lg"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+          <div className="card-dark p-8">
+            <div className="space-y-6">
+              <div className="text-center">
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
+                  <CountUp to={5} suffix="+" />
                 </div>
+                <p className="text-gray-400 mt-2">Years of Experience</p>
               </div>
-            ))}
+              <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+              <div className="text-center">
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
+                  <CountUp to={6} />
+                </div>
+                <p className="text-gray-400 mt-2">Salesforce Certifications</p>
+              </div>
+              <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+              <div className="text-center">
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
+                  <CountUp to={2} />
+                </div>
+                <p className="text-gray-400 mt-2">Scrum Certifications</p>
+              </div>
+              <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+              <div className="pt-2 text-center">
+                <div className="text-2xl font-bold text-cyan-400">Delhi, India</div>
+                <p className="text-gray-400 text-sm">Location</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
