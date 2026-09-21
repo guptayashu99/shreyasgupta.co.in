@@ -6,7 +6,7 @@ export default function WeddingPage() {
       <div className="mx-auto max-w-5xl rounded-[32px] border border-[#8a4f5d]/60 bg-[linear-gradient(135deg,rgba(53,18,23,0.96),rgba(90,23,30,0.92),rgba(47,14,18,0.98))] p-6 shadow-[0_30px_120px_rgba(26,8,12,0.72)] md:p-10">
         <div className="text-center">
           <div className="flex justify-center">
-            <img src="/company-logos/Wedding_Logo.png" alt="Wedding logo" className="h-32 w-32 rounded-full border border-[#f4d68a]/60 bg-[#2a0b12]/60 object-cover p-2 shadow-[0_0_35px_rgba(244,214,138,0.24)] md:h-40 md:w-40" />
+            <img src="/company-logos/Wedding_Logo.png" alt="Wedding logo" className="h-64 w-64 rounded-full border border-[#f4d68a]/60 bg-[#2a0b12]/60 object-cover p-3 shadow-[0_0_45px_rgba(244,214,138,0.28)] md:h-80 md:w-80" />
           </div>
           <p className="mt-8 font-mono text-[11px] font-medium uppercase tracking-[0.28em] text-[#f5d77a]">Wedding Celebration</p>
           <h1 className="mt-6 bg-gradient-to-r from-[#f9e6b1] via-[#d8b96d] to-[#f3d479] bg-clip-text font-display text-[clamp(40px,7vw,72px)] font-black leading-[0.96] tracking-[-0.06em] text-transparent">
