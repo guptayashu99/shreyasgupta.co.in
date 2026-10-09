@@ -1,11 +1,20 @@
-const venueName = '<Location>';
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueName)}`;
+const weddingVenue = {
+  name: 'Country Inn & Suites by Radisson',
+  address: '64/6, Site 4, Sahibabad Industrial Area Site 4, Sahibabad, Ghaziabad, Uttar Pradesh 201010',
+  mapsUrl: 'https://maps.app.goo.gl/cUGtNCrNVZniWPan8',
+};
+const engagementVenue = {
+  name: 'Silver Spoons',
+  address: 'C-7, Vasundhara, Sector 18, Vasundhara, Ghaziabad, Uttar Pradesh 201012',
+  mapsUrl: 'https://maps.app.goo.gl/AEBnMjtfr2zuGU74A',
+};
+const rsvpUrl = 'https://forms.gle/your-google-form-link';
 
 const events = [
-  { day: 'Day 1 · 11 March 2026', name: 'Engagement / Sangeet', time: 'Around 6:00 PM', hall: '<Hall name>' },
-  { day: 'Day 2 · 12 March 2026', name: 'Haldi', time: 'Around 11:00 AM', hall: '<Hall name>' },
-  { day: 'Day 2 · 12 March 2026', name: 'Jaimala', time: 'Around 6:00 PM', hall: '<Hall name>' },
-  { day: 'Day 3 · 13 March 2026', name: 'Pheras', time: 'Around 2:00 AM', hall: '<Hall name>' },
+  { day: 'Day 1 · 11 March 2026', name: 'Engagement / Sangeet', time: '6:00 PM', hall: '<Hall name>' },
+  { day: 'Day 2 · 12 March 2026', name: 'Haldi', time: '11:00 AM', hall: '<Hall name>' },
+  { day: 'Day 2 · 12 March 2026', name: 'Jaimala', time: '6:00 PM', hall: '<Hall name>' },
+  { day: 'Day 3 · 13 March 2026', name: 'Pheras', time: '2:00 AM', hall: '<Hall name>' },
 ];
 
 const accommodations = [
@@ -33,14 +42,17 @@ export default function WeddingInvitePage() {
 
           <div className="space-y-8 px-6 py-8 md:px-10 md:py-10">
             <section className="rounded-2xl border border-[#9b5c64]/60 bg-[rgba(32,9,14,0.5)] px-5 py-5 md:px-6">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f7d98d]">Main venue</p>
-                  <p className="mt-2 text-lg text-[#f0d6a3]">{venueName}</p>
-                </div>
-                <a href={mapsUrl} target="_blank" rel="noreferrer" className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#f5d77a] underline decoration-[#8a4f5d] underline-offset-4 hover:text-[#fff5d0]">Open in Google Maps ↗</a>
-              </div>
-              <p className="mt-4 text-sm leading-6 text-[#d4b067]">All functions will take place at the same overall venue, with each celebration hosted in its own hall. Venue and hall names will be confirmed soon.</p>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f7d98d]">Wedding venue</p>
+              <h2 className="mt-2 font-display text-2xl font-bold text-[#f9e8b5]">{weddingVenue.name}</h2>
+              <p className="mt-2 text-sm leading-6 text-[#f0d6a3]">{weddingVenue.address}</p>
+              <a href={weddingVenue.mapsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-[#f5d77a] underline decoration-[#8a4f5d] underline-offset-4 hover:text-[#fff5d0]">Open in Google Maps ↗</a>
+            </section>
+
+            <section className="rounded-2xl border border-[#9b5c64]/60 bg-[rgba(32,9,14,0.5)] px-5 py-5 md:px-6">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f7d98d]">Engagement venue</p>
+              <h2 className="mt-2 font-display text-2xl font-bold text-[#f9e8b5]">{engagementVenue.name}</h2>
+              <p className="mt-2 text-sm leading-6 text-[#f0d6a3]">{engagementVenue.address}</p>
+              <a href={engagementVenue.mapsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-[#f5d77a] underline decoration-[#8a4f5d] underline-offset-4 hover:text-[#fff5d0]">Open in Google Maps ↗</a>
             </section>
 
             <section>
@@ -77,7 +89,7 @@ export default function WeddingInvitePage() {
                   <h2 className="mt-4 font-display text-3xl font-bold text-[#f9e8b5]">Final timings, halls, stay details, and individual maps will be shared soon.</h2>
                 </div>
                 <div>
-                  <a href="mailto:work@shreyasgupta.co.in?subject=Wedding%20RSVP" className="inline-flex items-center justify-center rounded-lg bg-[linear-gradient(135deg,#f3d57f,#d4a93d)] px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#2b0b12] transition-transform duration-200 hover:scale-[1.02]">RSVP</a>
+                  <a href={rsvpUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-lg bg-[linear-gradient(135deg,#f3d57f,#d4a93d)] px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#2b0b12] transition-transform duration-200 hover:scale-[1.02]">RSVP</a>
                 </div>
               </div>
             </section>

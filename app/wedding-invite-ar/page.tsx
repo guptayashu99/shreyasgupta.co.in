@@ -1,7 +1,15 @@
 import Link from 'next/link';
 
-const venueName = '<Location>';
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueName)}`;
+const weddingVenue = {
+  name: 'Country Inn & Suites by Radisson',
+  address: '64/6, Site 4, Sahibabad Industrial Area Site 4, Sahibabad, Ghaziabad, Uttar Pradesh 201010',
+  mapsUrl: 'https://maps.app.goo.gl/cUGtNCrNVZniWPan8',
+};
+const engagementVenue = {
+  name: 'Silver Spoons',
+  address: 'C-7, Vasundhara, Sector 18, Vasundhara, Ghaziabad, Uttar Pradesh 201012',
+  mapsUrl: 'https://maps.app.goo.gl/AEBnMjtfr2zuGU74A',
+};
 const rsvpUrl = 'https://forms.gle/your-google-form-link';
 
 const events = [
@@ -34,13 +42,17 @@ export default function BrideSideInvitationPage() {
 
           <div className="space-y-8 px-6 py-8 md:px-10 md:py-10">
             <section className="rounded-2xl border border-[#9b5c64]/60 bg-[rgba(32,9,14,0.5)] px-5 py-5 md:px-6">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f7d98d]">Venue</p>
-                  <p className="mt-2 text-lg text-[#f0d6a3]">{venueName}</p>
-                </div>
-                <a href={mapsUrl} target="_blank" rel="noreferrer" className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#f5d77a] underline decoration-[#8a4f5d] underline-offset-4 hover:text-[#fff5d0]">Open in Google Maps ↗</a>
-              </div>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f7d98d]">Wedding venue</p>
+              <h2 className="mt-2 font-display text-2xl font-bold text-[#f9e8b5]">{weddingVenue.name}</h2>
+              <p className="mt-2 text-sm leading-6 text-[#f0d6a3]">{weddingVenue.address}</p>
+              <a href={weddingVenue.mapsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-[#f5d77a] underline decoration-[#8a4f5d] underline-offset-4 hover:text-[#fff5d0]">Open in Google Maps ↗</a>
+            </section>
+
+            <section className="rounded-2xl border border-[#9b5c64]/60 bg-[rgba(32,9,14,0.5)] px-5 py-5 md:px-6">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f7d98d]">Engagement venue</p>
+              <h2 className="mt-2 font-display text-2xl font-bold text-[#f9e8b5]">{engagementVenue.name}</h2>
+              <p className="mt-2 text-sm leading-6 text-[#f0d6a3]">{engagementVenue.address}</p>
+              <a href={engagementVenue.mapsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-[#f5d77a] underline decoration-[#8a4f5d] underline-offset-4 hover:text-[#fff5d0]">Open in Google Maps ↗</a>
             </section>
 
             <section>
