@@ -136,7 +136,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body style={{ overflow: 'clip' }}>{children}</body>
+      <body style={{ overflowX: 'hidden', overflowY: 'auto' }}>{children}</body>
     </html>
   );
 }
